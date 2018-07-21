@@ -1,75 +1,46 @@
 <template>
-<div id="index">
+<div id="discover" class="clearfix">
     <!-- 顶部搜索栏 -->
-    <div class="index-search clearfix">
-        <img src="../img/index/index-meun.jpg" alt="" class="index-meun">
+    <div class="discover-search clearfix">
+        <img src="../img/index/index-meun.jpg" alt="" class="discover-meun">
         <input type="text">
-        <img src="../img/index/index-search.jpg" alt="" class="index-look">
+        <img src="../img/index/index-search.jpg" alt="" class="discover-look">
     </div>
       <!-- 轮播图 -->
     <swiper  :options="swiperOption" ref="mySwiper">
       <swiper-slide><div class="fd_slide fd_slide1"><img src="../img/index/index-sp1.jpg" alt=""></div></swiper-slide>
       <swiper-slide><div class="fd_slide fd_slide1"><img src="../img/index/index-sp1.jpg" alt=""></div></swiper-slide>
       <swiper-slide><div class="fd_slide fd_slide1"><img src="../img/index/index-sp1.jpg" alt=""></div></swiper-slide>
-      <!-- <div class="swiper-pagination "  slot="pagination"></div> -->
+      <div class="swiper-pagination "  slot="pagination"></div>
     </swiper>
-
-    <!-- 赛事回放 -->
-    <div class="index-box clearfix">
-        <div class="index-inbox clearfix">
-        <p class="index-rewind">
-            <span class="index-title">赛事回放</span>
-            <span class="index-more">更多&gt;&gt;&gt;</span>
-        </p>
-        <img src="../img/index/index-img1.jpg" alt="">
-        <img src="../img/index/index-img1.jpg" alt="">
-        <img src="../img/index/index-img1.jpg" alt="">
-        </div>
-
-        <div class="index-inbox clearfix">
-        <p class="index-rewind">
-            <span class="index-title">赛事用品</span>
-            <span class="index-more">更多&gt;&gt;&gt;</span>
-        </p>
-        <img src="../img/index/index-img2.jpg" alt="">
-        <img src="../img/index/index-img2.jpg" alt="">
-        <img src="../img/index/index-img2.jpg" alt="">
-        </div>
-
-        <div class="index-inbox clearfix">
-        <p class="index-rewind">
-            <span class="index-title">赛事投票</span>
-            <span class="index-more">更多&gt;&gt;&gt;</span>
-        </p>
-        <img src="../img/index/index-img1.jpg" alt="">
-        <img src="../img/index/index-img1.jpg" alt="">
-        <img src="../img/index/index-img1.jpg" alt="">
-        </div>
-
-        <div class="index-inbox clearfix">
-        <p class="index-rewind">
-            <span class="index-title">赛事成绩</span>
-            <span class="index-more">更多&gt;&gt;&gt;</span>
-        </p>
-        <img src="../img/index/index-img1.jpg" alt="">
-        <img src="../img/index/index-img1.jpg" alt="">
-        <img src="../img/index/index-img1.jpg" alt="">
-        </div>
-
+    <!-- 通告、赛事 -->
+    <div class="discover-inform clearfix">
+        <p>通告</p>
+        <p>赛事热播</p>
+        <p>模卡</p>
     </div>
-    <!-- 底部导航 -->
-    <div class="index-bottom">
-
+    <!-- 比赛 -->
+    <div class="discover-box clearfix">
+        <div class="discover-left">
+        <img src="../img/discover/discover-img1.png" alt="">
+        </div>
+        <div class="discove-inbox">
+            <p class="discover-topic">世界小姐大赛</p>
+            <p class="discover-unit">主办单位：xxxxxxxxxxx</p>
+            <p class="discover-time">时间：2018年08月10日</p>
+        </div>
     </div>
+    </div>
+
 </div>
-
 </template>
+
 <script>
   import 'swiper/dist/css/swiper.css'
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-name: 'index',
+name: 'discover',
   data () {
     return {
         swiperOption: {
@@ -111,6 +82,7 @@ name: 'index',
 
 </script>
 
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 *{
@@ -124,15 +96,14 @@ a{
     content:'';clear:both;display:block;
 }
 
-#index{
+#discover{
     width:100%;
     /* height:100vh; */
         background:url('../img/index/index-bgc.png') center no-repeat;
     background-size:100% 100%;
     letter-spacing: 1px;
 }
-
-.index-search{
+.discover-search{
     width:100%;
     height:2.5rem;
     text-align: center;
@@ -140,13 +111,13 @@ a{
     background:#10ECE6;
     /* padding-bottom:0.5rem; */
 }
-.index-meun{
+.discover-meun{
     width:1.5rem;
     margin-top:0.75rem;
     margin-left:0.5rem;
     float:left;
 }
-.index-search input{
+.discover-search input{
     width:11rem;
     border-radius: 5%;
     height:1.8rem;
@@ -157,13 +128,12 @@ a{
     background:url('../img/index/index-input.png') center no-repeat;
     background-size: 100% 100%;
 }
-.index-look{
+.discover-look{
     width:1.3rem;
     margin-top:0.65rem;
     margin-right:0.5rem;
     float:right;
 }
-
 
 #swiper{ height: 30vh;position:relative;
   width:100%;}
@@ -182,41 +152,54 @@ a{
   position:absolute;bottom:0.5rem;
 }
 
-
-.index-box{
+.discover-inform{
     width:100%;
-    font-family: '仿宋';
-    padding-bottom:3rem;
+    /* height:4rem; */
+    padding:0.6rem 0;
+    line-height: 2rem;
+    background:#AD0EFF;
 }
-.index-rewind{
-    width:100%;height:2rem;
-    line-height:2rem;
-
-}
-.index-title{
-    font-size:1rem;
+.discover-inform p{
+    /* width:8rem; */
+    border-radius: 39%;
+    height:1.8rem;
+    line-height: 1.8rem;
+    padding:0 0.65rem;
+    background:white;
+    color:#AD0EFF;
+    font-size: 1rem;
     float:left;
-    margin-left:0.5rem;
-    color:white;
-}
-.index-more{
-    font-size:0.6rem;
-    float:right;
-    margin-right:0.5rem;
-    text-align: end;
-    color:white;
-}
-
-.index-box{
-    width:100%;
-    text-align:center;
-}
-
-.index-box img{
-    width:4.8rem;
-    /* margin:0.2rem 0; */
+    font-weight: bold;
     margin-left:0.4rem;
+    /* display:inline-block; */
+}
+
+
+.discover-box{
+    width:100%;
+}
+.discover-box .discover-left{
+    width:8rem;
     float:left;
-    margin:
+}
+.discover-box img{
+    width:8rem;
+}
+.discover-box .discover-inbox{
+    width:7rem;
+    float:right;
+}
+.discover-box p{
+    width:100%;
+    text-align: left;
+    padding-left:0.4rem;
+}
+.discover-box .discover-topic{
+    font-size:1.2rem;
+    padding-bottom:1rem;
+}   
+.discover-box .discover-unit,.discover-time{
+    font-size:0.5rem;
+    padding:0.2rem 0
 }
 </style>
