@@ -5,9 +5,9 @@
 </template>
 
 <script>
-document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth*20/375 + 'px';
+document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth*20/320 + 'px';
 window.onresize = function() {
-    document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth*20/375 + 'px';
+    document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth*20/320 + 'px';
 }
 export default {
   name: 'App'
