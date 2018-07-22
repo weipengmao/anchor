@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/components/index'
 import login from '@/components/login'
-<<<<<<< HEAD
 import arrangement from '@/components/arrangement'
 import detail from '@/components/detail'
 import cities from '@/components/cities'
@@ -10,13 +9,18 @@ import discover from '@/components/discover'
 import score from '@/components/score'
 import popularity from '@/components/popularity'
 import liveRadio from '@/components/liveRadio'
+import publish from '@/components/publish'
+import MokaPublish from '@/components/MokaPublish'
+import MokaDetail from '@/components/MokaDetail'
+import popularityRank from '@/components/popularityRank'
+import rules from '@/components/rules'
+import announcement from '@/components/announcement'
 
-=======
 import register from '@/components/register'
 import info from '@/components/info'
 import trade from '@/components/trade'
 import order from '@/components/order'
->>>>>>> 299f3332ca3c7b9f60c43f4e042f43a104b0da2b
+
 Vue.use(Router)
 
 export default new Router({
@@ -32,7 +36,6 @@ export default new Router({
       component: login
     },
     {
-<<<<<<< HEAD
       path: '/arrangement',
       name: 'arrangemnet',
       component: arrangement
@@ -66,7 +69,8 @@ export default new Router({
       path: '/liveRadio',
       name: 'liveRadio',
       component: liveRadio
-=======
+    },
+    {
       path: '/register',
       name: 'register',
       component: register
@@ -85,7 +89,36 @@ export default new Router({
       path: '/order',
       name: 'order',
       component: order
->>>>>>> 299f3332ca3c7b9f60c43f4e042f43a104b0da2b
+    },
+    {
+      path: '/publish',
+      name: 'publish',
+      component: publish
+    },
+    {
+      path: '/MokaDetail',
+      name: 'MokaDetail',
+      component: MokaDetail
+    },
+    {
+      path: '/MokaPublish',
+      name: 'MokaPublish',
+      component: MokaPublish
+    },
+    {
+      path: '/popularityRank',
+      name: 'popularityRank',
+      component: popularityRank
+    },
+    {
+      path: '/rules',
+      name: 'rules',
+      component: rules
+    },
+    {
+      path: '/announcement',
+      name: 'announcement',
+      component: announcement
     }
   ]
 })

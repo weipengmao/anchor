@@ -43,6 +43,7 @@ a{
 }
 li{
     list-style: none;
+    
 }
 .clearfix:after{
     content:'';clear:both;display:block;
