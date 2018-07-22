@@ -1,7 +1,7 @@
 <template>
 <div class="clearfix" id="cities">
     <img src="../img/cities/cities-top.png" alt="" class="cities-img">
-    <p class="cities-title">各分赛区</p>
+    <p class="cities-title">各分赛区成绩</p>
     <div class="clearfix" style="width:100%">
     <p class="cities-tip clearfix">点击相应目标城市即可进如城市报名页面</p>
     <ul class="cities-box clearfix" >
@@ -62,7 +62,7 @@ li{
     width:100%;height:2.5rem;line-height:2.5rem;
     font-size: 1rem;color:white;
     font-family: '方正姚体';
-    background:#3CACF3;
+    /* background:#3CACF3; */
 
 }
 .cities-tip{
@@ -85,6 +85,7 @@ li{
     margin:0.15rem 0;
     margin-left:0.25rem;
     border-radius: 0 10%  0 10%;
+   
 }
 
 .cities-warn{

@@ -1,23 +1,28 @@
 <template>
-<div class="clearfix" id="cities">
-    <img src="../img/cities/cities-top.png" alt="" class="cities-img">
-    <p class="cities-title">各分赛区</p>
+<div class="clearfix" id="liveRadio">
+    <!-- 头部标题 -->
+    <div class="liveRadio-top">
+        <img src="../img/liveRadio/liveRadio-img1.png" alt="">
+        <img src="../img/liveRadio/liveRadio-img2.png" alt="">
+        <img src="../img/liveRadio/liveRadio-img3.png" alt="">
+        <p class="liveRadio-topic">各分赛区</p>
+    </div>
+    <!-- 视频 -->
+    <img src="../img/liveRadio/liveRadio-img4.png" alt="" class="vedio">
+    <!-- 各地区 -->
     <div class="clearfix" style="width:100%">
     <p class="cities-tip clearfix">点击相应目标城市即可进如城市报名页面</p>
     <ul class="cities-box clearfix" >
         <li v-for="item in items">{{item}}</li>
     </ul>
-    <p class="cities-warn">赛事组委会享有最终解释权</p>
+    <!-- <p class="cities-warn">赛事组委会享有最终解释权</p> -->
     </div>
-    
 </div>
 </template>
 
 <script>
-
-
 export default {
-    name:'cities',
+    name:'liveRadio',
     data(){
         return{
             items:['乌鲁木齐','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州',
@@ -42,29 +47,39 @@ li{
 .clearfix:after{
     content:'';clear:both;display:block;
 }
-#cities{
-    width:100%;
+#liveRadio{
+        width:100%;
     /* height:100vh; */
     background:url('../img/cities/cities-bg.png') center no-repeat;
     background-size: 100% 100%;
 }
-.cities-img{
+.liveRadio-top{
     width:100%;
-    height:20vh;
+    height:3rem;
+    line-height: 3rem;
+    background:#B703FF;
 }
 
-.cities-box{
-    width:100%;
-    /* padding-top:1rem; */
-    /* margin-top:1rem; */
+.liveRadio-top img{
+    width:1.4rem;
+    margin-top:0.8rem;
+    float:left;margin-left:0.4rem;
 }
-.cities-title{
-    width:100%;height:2.5rem;line-height:2.5rem;
-    font-size: 1rem;color:white;
-    font-family: '方正姚体';
-    background:#3CACF3;
 
+.liveRadio-top .liveRadio-topic{
+    font-size: 0.9rem;
+    color:white;
+    letter-spacing: 2px;
+    font-weight: bold;
+    float:right;
+    margin-right:1rem;
 }
+
+.vedio{
+    width:100%;
+}
+
+
 .cities-tip{
     width:100%;
     height:2rem;
@@ -78,7 +93,7 @@ li{
     width:5rem;height:2.5rem;
     line-height: 2.5rem;
     font-size: 1rem;
-    color:#BEA4D0;
+    color:#FFFFFF;
     text-align: center;
     float:left;
     background:#48007C;

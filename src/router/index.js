@@ -6,6 +6,9 @@ import arrangement from '@/components/arrangement'
 import detail from '@/components/detail'
 import cities from '@/components/cities'
 import discover from '@/components/discover'
+import score from '@/components/score'
+import popularity from '@/components/popularity'
+import liveRadio from '@/components/liveRadio'
 
 Vue.use(Router)
 
@@ -40,6 +43,21 @@ export default new Router({
       path: '/discover',
       name: 'discover',
       component: discover
+    },
+    {
+      path: '/score',
+      name: 'score',
+      component: score
+    },
+    {
+      path: '/popularity',
+      name: 'popularity',
+      component: popularity
+    },
+    {
+      path: '/liveRadio',
+      name: 'liveRadio',
+      component: liveRadio
     }
   ]
 })

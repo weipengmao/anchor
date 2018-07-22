@@ -1,7 +1,7 @@
 <template>
 <div class="clearfix" id="cities">
     <img src="../img/cities/cities-top.png" alt="" class="cities-img">
-    <p class="cities-title">各分赛区</p>
+    <p class="cities-title">人气榜单</p>
     <div class="clearfix" style="width:100%">
     <p class="cities-tip clearfix">点击相应目标城市即可进如城市报名页面</p>
     <ul class="cities-box clearfix" >

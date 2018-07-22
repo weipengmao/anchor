@@ -15,22 +15,45 @@
     </swiper>
     <!-- 通告、赛事 -->
     <div class="discover-inform clearfix">
-        <p>通告</p>
-        <p>赛事热播</p>
-        <p>模卡</p>
+        <p v-for="item in items">{{item}}</p>
     </div>
     <!-- 比赛 -->
+    <div class="clearfix" style="margin-bottom:1rem;">
     <div class="discover-box clearfix">
         <div class="discover-left">
-        <img src="../img/discover/discover-img1.png" alt="">
+        <img src="../img/discover/discover-img3.png" alt="">
         </div>
-        <div class="discove-inbox">
+        <div class="discover-inbox clearfix">
             <p class="discover-topic">世界小姐大赛</p>
-            <p class="discover-unit">主办单位：xxxxxxxxxxx</p>
+            <p class="discover-unit">主办单位：深圳职业技术学院</p>
             <p class="discover-time">时间：2018年08月10日</p>
         </div>
     </div>
+
+        <div class="discover-box clearfix">
+        <div class="discover-left">
+        <img src="../img/discover/discover-img3.png" alt="">
+        </div>
+        <div class="discover-inbox clearfix">
+            <p class="discover-topic">中国国际少儿模特大赛</p>
+            <p class="discover-unit">主办单位：深圳职业技术学院</p>
+            <p class="discover-time">时间：2018年08月10日</p>
+        </div>  
+       </div>
+
+           <div class="discover-box clearfix">
+        <div class="discover-left">
+        <img src="../img/discover/discover-img3.png" alt="">
+        </div>
+        <div class="discover-inbox clearfix">
+            <p class="discover-topic">中国模特大赛</p>
+            <p class="discover-unit">主办单位：深圳职业技术学院</p>
+            <p class="discover-time">时间：2018年08月10日</p>
+        </div>
+        </div>
     </div>
+    </div>
+
 
 </div>
 </template>
@@ -58,20 +81,7 @@ name: 'discover',
           }
         },
         swiperSlides: [1, 2, 3],
-        items:[],
-        titleIndex:[],
-        titleContent:[],
-        Index:[],
-        textData:[],
-        textIndex:[],
-        textPlace:[],
-        imgIndex:[],
-        // backgroundImg:require('../common/image/swiper.jpg'),
-        loading:true,
-        moreAnswerLoading:true,
-        moreAnswerLoadingA:true,
-        own:false,
-        noneText:false
+        items:['通告','赛事热播','模卡'],
     }
   },
         components:{
@@ -102,6 +112,7 @@ a{
         background:url('../img/index/index-bgc.png') center no-repeat;
     background-size:100% 100%;
     letter-spacing: 1px;
+    background-color: white;
 }
 .discover-search{
     width:100%;
@@ -158,6 +169,7 @@ a{
     padding:0.6rem 0;
     line-height: 2rem;
     background:#AD0EFF;
+
 }
 .discover-inform p{
     /* width:8rem; */
@@ -171,35 +183,50 @@ a{
     float:left;
     font-weight: bold;
     margin-left:0.4rem;
+    margin-top: 0.2rem;
     /* display:inline-block; */
 }
 
 
 .discover-box{
     width:100%;
+    background:white;
+    /* border:1px solid white; */
+    padding-top: 0.4rem;
+    
+
 }
 .discover-box .discover-left{
     width:8rem;
+    margin-left:0.4rem;
     float:left;
 }
 .discover-box img{
     width:8rem;
+    float:left;
 }
 .discover-box .discover-inbox{
-    width:7rem;
-    float:right;
+    width:7.5rem;
+    float:left;
+    padding-left:0.4rem
+
 }
 .discover-box p{
     width:100%;
+    font-weight: bold;
     text-align: left;
-    padding-left:0.4rem;
+    font-size:0.5rem;
+
 }
 .discover-box .discover-topic{
-    font-size:1.2rem;
-    padding-bottom:1rem;
+    font-size:0.85rem;
+    padding-bottom:0.3rem;
 }   
 .discover-box .discover-unit,.discover-time{
-    font-size:0.5rem;
-    padding:0.2rem 0
+    height:1rem;
+    padding:0.2rem 0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
 }
 </style>
