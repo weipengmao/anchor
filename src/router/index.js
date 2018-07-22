@@ -6,6 +6,12 @@ import register from '@/components/register'
 import info from '@/components/info'
 import trade from '@/components/trade'
 import order from '@/components/order'
+import optimization from '@/components/optimization'
+import recommend from '@/components/recommend'
+import shop from '@/components/shop'
+import list from '@/components/list'
+import optIndex from '@/components/optIndex'
+import center from '@/components/center'
 Vue.use(Router)
 
 export default new Router({
@@ -39,6 +45,40 @@ export default new Router({
       path: '/order',
       name: 'order',
       component: order
-    }
+    },
+    {
+      path: '/optimization',
+      name: 'optimization',
+      component: optimization,
+      children: [
+        {
+          path: '/',
+          name: 'optIndex',
+          component: optIndex,
+          children:[
+            {
+              path: '/',
+              name: 'center',
+              component: center,
+            }
+          ]
+        },
+        {
+          path: '/shop',
+          name: 'shop',
+          component: shop
+        },
+        {
+          path: '/recommend',
+          name: 'recommend',
+          component: recommend
+        },
+        {
+          path: '/list',
+          name: 'list',
+          component: list
+        },
+      ]
+    },
   ]
 })

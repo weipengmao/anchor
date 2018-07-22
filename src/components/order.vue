@@ -1,7 +1,7 @@
 <template>
     <div class="order-container">
         <div class="order-top clearfix">
-            <img src="../img/anchor-info-arrow.png" alt="">
+            <img src="../img/anchor-info-arrow.png" alt="" @touchend="toOpt">
             <span>我的订单</span>
         </div>
         <div class="order-bottom">
@@ -13,12 +13,80 @@
         </div>
         <div class="order-content">
             <div class="order-content-pay">
-                <div class="order-pay-text"></div>
+                <div class="order-pay-text" v-for="item in payItem" >
+                    <div class="order-content-left">
+                        <img src="../img/anchor-order-img.png" width="90" >
+                    </div>
+                    <div class="order-content-center">
+                        <span>小青甘普茶</span>
+                        <p>套餐{{num}}</p>
+                    </div>
+                    <div class="order-content-right">
+                        <span>￥{{price}}.00</span>
+                        <p style="color:red;border:1px solid red;">待付款</p>
+                    </div>
+                </div>
             </div>
-            <div class="order-content-payOne"></div>
-            <div class="order-content-payTwo"></div>
-            <div class="order-content-payThree"></div>
-            <div class="order-content-payFouth"></div>
+            <div class="order-content-pay">
+                <div class="order-pay-text" v-for="item in payItemOne">
+                    <div class="order-content-left">
+                        <img src="../img/anchor-order-img.png" width="90" >
+                    </div>
+                    <div class="order-content-center">
+                        <span>小青甘普茶</span>
+                        <p>套餐{{num}}</p>
+                    </div>
+                    <div class="order-content-right">
+                        <span>￥{{price}}.00</span>
+                        <p style="color:#a7a4a4;border:1px solid #a7a4a4;">查看物流</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-content-pay">
+                 <div class="order-pay-text" v-for="item in payItemTwo">
+                    <div class="order-content-left">
+                        <img src="../img/anchor-order-img.png" width="90" >
+                    </div>
+                    <div class="order-content-center">
+                        <span>小青甘普茶</span>
+                        <p>套餐{{num}}</p>
+                    </div>
+                    <div class="order-content-right">
+                        <span>￥{{price}}.00</span>
+                        <p style="color:yellow;border:1px solid yellow;">确认收货</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-content-pay">
+                <div class="order-pay-text" v-for="item in payItemThree">
+                    <div class="order-content-left">
+                        <img src="../img/anchor-order-img.png" width="90" >
+                    </div>
+                    <div class="order-content-center">
+                        <span>小青甘普茶</span>
+                        <p>套餐{{num}}</p>
+                    </div>
+                    <div class="order-content-right">
+                        <span>￥{{price}}.00</span>
+                        <p style="color:red;border:1px solid red;">待评价</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-content-pay">
+                <div class="order-pay-text" v-for="item in payItemFouth">
+                    <div class="order-content-left">
+                        <img src="../img/anchor-order-img.png" width="90" >
+                    </div>
+                    <div class="order-content-center">
+                        <span>小青甘普茶</span>
+                        <p>套餐{{num}}</p>
+                    </div>
+                    <div class="order-content-right">
+                        <span>￥{{price}}.00</span>
+                        <p style="color:red;border:1px solid red;border-radius:0;">申请售后</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -27,19 +95,32 @@
 export default {
     mounted(){
         var li =  document.querySelectorAll(".order-bottom span");
-        var div = document.querySelectorAll(".order-content div");
-        console.log(div)
+        var div = document.querySelectorAll(".order-content-pay");
         $(li[0]).addClass("active");
         $(div[0]).css("display","block");
         for(let i=0;i<li.length;i++){
             li[i].ontouchend = function(){
                 $(this).addClass("active").siblings().removeClass("active");
-                $(div[i]).css("display","block").siblings().css("display","none")
+                $(div[i]).css("display","block").siblings().css("display","none");
             }
         }
     },
     methods:{
-
+        toOpt(){
+            this.$router.push("/optimization")
+        }
+    },
+    data(){
+        return {
+            num:1,
+            price:399,
+            //栏目自己配置
+            payItem:[1,2,3,4],
+            payItemOne:[1,2,3,4],
+            payItemTwo:[1,2,3,4],
+            payItemThree:[1,2,3,4],
+            payItemFouth:[1,2,3,4]
+        }
     }
 }
 </script>
@@ -100,11 +181,9 @@ export default {
     background: rgba(185,0,255,1);
     color:#fff !important;
 }
-.order-content-payOne,.order-content-payTwo,.order-content-payThree,.order-content-payFouth{
+.order-content-pay{
     display:none;
     background: #fff;
-}
-.order-content-pay{
     height:100%;
 }
 .order-content{
@@ -113,6 +192,45 @@ export default {
 .order-pay-text{
     height:4.75rem;
     width:100%;
-
+    border-bottom:1px solid rgba(185,0,255,1);
 }
+.order-content-left{
+    float:left;
+    margin:0.2rem 0 0 0.2rem;
+    font-size:0.5rem;
+}
+.order-content-center{
+    float: left;
+    font-size:0.5rem;
+    text-align: left;
+}
+.order-content-center span{
+    display: inline-block;
+    margin:0.7rem 0 0 0.5rem;
+    font-weight: 700;
+}
+.order-content-center p{
+    margin:0.7rem 0 0 0.5rem;
+    color:#a7a4a4;
+}
+.order-content-left span{
+    display: inline-block;
+}
+.order-content-right{
+    float:right;
+    font-size:0.5rem;
+}
+.order-content-right span{
+    display: inline-block;
+    margin:0.7rem 1.2rem 0 0rem;
+    font-weight: 700;
+    color: red;
+}
+.order-content-right p{
+    font-size: 0.7rem;
+    margin:1.7rem 1rem 0 0rem;
+    width:4rem;
+    border-radius: 0.5rem;
+}
+
 </style>
