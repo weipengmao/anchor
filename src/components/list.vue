@@ -3,7 +3,6 @@
         <div class="list-left">
             <div class="list-ul" v-for="(item,key) in lis">
                 <ul class="list-left-ul" @touchend="getLi"><span>{{ulName}}</span></ul>
-                <li class="list-left-li" @touchend="LiContent"><span>{{liName}}</span></li>
             </div>
         </div>
         <div class="list-right">
@@ -32,15 +31,13 @@ export default {
     },
     data(){
         return {
-            lis:[1,2,3,4],
+            lis:[1,2,3,4,5,6,7,9,8,9,7],
             ulName:"热门",
-            liName:"商品名称",
             listName:[1,2,3,4,5,6,7,8,9,10]
         }
     },
     methods:{
         getLi(){},
-        LiContent(){}
     }
 }
 </script>
@@ -74,14 +71,13 @@ export default {
 .list-left-ul{
     height:1.4rem;
     list-style: none;
-    margin:0;
+    margin: 0.4rem 0 0.4rem 0;
     padding:0;
     font-size:0.7rem;
 }
 .list-left-ul span{
     display: inline-block;
     margin-top:0.25rem;
-    color:rgba(104,29,164,1)
 }
 .list-left-li{
     list-style: none;
@@ -93,6 +89,7 @@ export default {
     margin-bottom:0.45rem;
 }
 .activeLi{
+    color:rgba(104,29,164,1);
     border-left:3px solid rgba(104,29,164,0.5);
 }
 .list-right-img{
