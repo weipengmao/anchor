@@ -3,10 +3,7 @@
         <div class="order-content">
             <div class="order-content-pay">
                 <div class="order-pay-text" v-for="(item,key) in payItem" >
-                    <div class="checkboxFour ">
-                        <input :name="'checkbox'+key" type="checkbox" :id = "'checkboxFourInput'+key" @touchend="checked(key)" :checked="false" style="float:left;margin-top:2rem;outline:none;">
-                        <label :for="'checkboxFourInput'+key"></label>
-                    </div>
+                    <span style="float:left" :id="'check'+key" class="checkboxFourx" @touchend.stop="checked(key)"></span>
                     <div class="order-content-left">
                         <img src="../img/anchor-order-img.png" width="90" >
                     </div>
@@ -19,8 +16,21 @@
                     </div>
                     <div class="order-content-text">
                         <p @touchend ="add(key)" style="text-align:center;border-right:1px solid #ccc;padding-right:0.2rem;">+</p>
-                        <input type="text" :value="1" style="padding-left:0.3rem;" :id="'input'+key">
+                        <input type="text" v-model="value[key]" style="padding-left:0.3rem;" :id="'input'+key">
                         <p @touchend ="radiu(key)" style="border-left:1px solid #ccc;padding-left:0.2rem;">-</p>
+                    </div>
+                    <div class="shop-bottom clearfix">
+                        <div class="bottom-left">
+                            <div style="position:relative;">
+                                <span id="check" class="checkboxFoury" @touchend="checkedall()"></span>
+                                <span style="font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:2.5rem">全选</span>
+                                <span style="color:#ccc;font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:1rem">合计：
+                                <span style="color:black;font-size:0.6rem;">￥<span>{{allPrice}}</span>.00</span></span>
+                            </div>
+                        </div>
+                        <div class="bottom-right">
+                            <span>结算</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -35,6 +45,7 @@ export default {
     methods:{
         add(i){
             var val = parseInt($("#price"+i).html());
+            var valsx = $("#check"+i).css("background-color");
             var vals;
             if(this.num==0){
                 vals = val;
@@ -43,22 +54,55 @@ export default {
             }else{
                 vals = this.val;
             }
-            document.querySelector("#input"+i).value = parseInt(document.querySelector("#input"+i).value)+1;
+            if(valsx =="rgb(255, 0, 0)"){
+                this.allPrice+=this.val;
+            }
+            document.querySelector("#input"+i).value = ++this.value[i];
             document.querySelector("#price"+i).innerHTML = document.querySelector("#input"+i).value*vals;
         },
         radiu(i){
+            var valsx = $("#check"+i).css("background-color");
             if(document.querySelector("#input"+i).value>1){
-                document.querySelector("#input"+i).value = parseInt(document.querySelector("#input"+i).value)-1;
+                if(valsx =="rgb(255, 0, 0)"){
+                    this.allPrice-=this.val;
+                }
+                document.querySelector("#input"+i).value = --this.value[i];
                 document.querySelector("#price"+i).innerHTML = document.querySelector("#input"+i).value*this.val;
             }
         },
         checked(i){
-            var val = $("input[name=radio"+i+"]").prop("checked");
-
+            var val = $("#check"+i).css("background-color");
+            if(val == "rgb(255, 0, 0)"){
+                $("#check"+i).css("background","white")
+                this.allPrice -= parseInt($("#price"+i).html());
+            }else{
+                $("#check"+i).css("background","rgb(255, 0, 0)")
+                this.allPrice += parseInt($("#price"+i).html());
+            }
             if(val == true){
                 val = false
             }else if(val == false){
                 val = true
+            }
+        },
+        checkedall(){
+            
+            var val = $("#check").css("background-color");
+            var node = $(".order-pay-text").length;
+            var vals = 0;
+            if(val == "rgb(255, 0, 0)"){
+                $("#check").css("background","white");
+                this.allPrice = vals;
+                for(let i=0;i<node;i++){
+                   $("#check"+i).css("background","white");
+                }
+            }else{
+                for(let i=0;i<node;i++){
+                    $("#check"+i).css("background","rgb(255,0,0)");
+                    vals += parseInt($("#price"+i).html());
+                }
+                this.allPrice = vals;
+                $("#check").css("background","rgb(255, 0, 0)")
             }
         }
     },
@@ -68,7 +112,9 @@ export default {
             //栏目自己配置
             payItem:[1,2,3,4],
             num:0,
-            val:0
+            val:0,
+            allPrice:0,
+            value:[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
         }
     }
 }
@@ -174,7 +220,7 @@ input::-webkit-input-placeholder{text-align: center;}
 	display: block;
 	width: 0.5rem;
 	height: 0.5rem;
-	border-radius: 100px;
+	border-radius: 50%;
     outline: none;
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
@@ -195,5 +241,45 @@ input::-webkit-input-placeholder{text-align: center;}
 }
 .checkboxFour input{
     display:none;
+}
+.shop-bottom{
+    height:3rem;
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+.bottom-right{
+    background: red;
+    width:6rem;
+    height:100%;
+    float: right;
+}
+.bottom-right span{
+    display: inline-block;
+    color:#fff;
+    margin-top:0.85rem;
+}
+.checkboxFoury{
+    left:0;
+    position: absolute;
+    margin-left:1rem;
+    margin-top:1.1rem;
+    width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+    display: inline-block;
+    float: left;
+    border:5px solid #ddd;
+}
+.checkboxFourx{
+    left:0;
+    margin-left:0.8rem;
+    margin-top:1.6rem;
+    width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+    display: inline-block;
+    float: left;
+    border:5px solid #ddd;
 }
 </style>
