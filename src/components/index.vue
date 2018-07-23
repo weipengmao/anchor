@@ -59,7 +59,11 @@
     </div>
     <!-- 底部导航 -->
     <div class="index-bottom">
-
+        <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
+        <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
+        <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
+        <img src="../img/index/index-mall.png" alt="" @click="toMall()">
+        <img src="../img/index/index-personal.png" alt="" @click="toAccount()">
     </div>
 </div>
 
@@ -107,6 +111,23 @@ name: 'index',
       swiper,
       swiperSlide
     },
+    methods:{
+        toHome(){
+            this.$router.push('/')
+        },
+        toAssign(){
+            this.$router.push('/arrangement')
+        },
+        toDiscover(){
+            this.$router.push('/discover')
+        },
+        toMall(){
+            this.$router.push('/recommend')
+        },
+        toAccount(){
+            this.$router.push('/info')
+        },
+    }
 }
 
 </script>
@@ -186,7 +207,7 @@ a{
 .index-box{
     width:100%;
     font-family: '仿宋';
-    padding-bottom:3rem;
+    padding-bottom:3.5rem;
 }
 .index-rewind{
     width:100%;height:2rem;
@@ -218,5 +239,31 @@ a{
     margin-left:0.4rem;
     float:left;
     margin:
+}
+
+
+    /* 底部导航 */
+.index-bottom{
+    width:100%;
+    height:3rem;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background:#AD0EFF;
+display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+display: -ms-flexbox; /* TWEENER - IE 10 */
+display: -webkit-flex; /* NEW - Chrome */
+display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+justify-content: center;
+align-items: center;
+flex-direction: row;
+}
+.index-bottom img{
+    width:15%;
+    height:2.3rem;
+    flex:1;
+    display:inline-block;
+    border-left:1px solid #fff;
 }
 </style>

@@ -7,7 +7,9 @@
     <!-- 规则条例 -->
     <div class="announcement-box">
         <p>使用浏览器访问以下地址</p>
-        <p>http://xxx.xxx.com/</p>
+        <a href="#">
+            <p>http://xxx.xxx.com/</p>
+        </a>
         <p>登录后台发布信息</p>
     </div>
 
@@ -65,6 +67,7 @@ li{
 }
 
 .announcement-button{
+    font-family: '微软雅黑';
     width:10rem;
     height:2rem;
     line-height: 2rem;
@@ -84,6 +87,7 @@ li{
     padding-top:1rem;
 }
 .announcement-box p{
+    font-family: '微软雅黑';
     width:100%;
     line-height: 1.5rem;
     text-indent: 1em;

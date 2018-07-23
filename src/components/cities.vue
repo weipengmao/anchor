@@ -61,7 +61,7 @@ li{
 .cities-title{
     width:100%;height:2.5rem;line-height:2.5rem;
     font-size: 1rem;color:white;
-    font-family: '方正姚体';
+    font-family: '微软雅黑';
     background:#3CACF3;
 
 }
@@ -75,9 +75,10 @@ li{
 
 
 .cities-box li{
+    font-family: '微软雅黑';
     width:5rem;height:2.5rem;
     line-height: 2.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color:#BEA4D0;
     text-align: center;
     float:left;

@@ -54,8 +54,8 @@ a{
     height:2rem;
     line-height:2rem;
     color:white;
-    font-size:1.3rem;
-    font-family: '方正姚体'
+    font-size:1.1rem;
+    font-family: '微软雅黑'
 }
 .detail-box img{
     width:7rem;

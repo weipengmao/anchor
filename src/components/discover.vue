@@ -88,6 +88,7 @@ name: 'discover',
       swiper,
       swiperSlide
     },
+
 }
 
 </script>
@@ -172,6 +173,7 @@ a{
 
 }
 .discover-inform p{
+    font-family: '微软雅黑';
     /* width:8rem; */
     border-radius: 39%;
     height:1.8rem;
@@ -212,6 +214,7 @@ a{
 
 }
 .discover-box p{
+    font-family: '微软雅黑';
     width:100%;
     font-weight: bold;
     text-align: left;
