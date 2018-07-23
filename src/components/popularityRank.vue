@@ -21,40 +21,40 @@
         <div class="popBox">
             <img src="../img/popularityRank/popularityRank-img.png" alt="">
             <div class="bottom">
-                <span class="name">花轮同学</span>
-                <span class="num">
+                <p class="name">花轮同学</p>
+                <p  class="num">
                   <span style="color:#98D1D8">111223</span>
-                    人气</span>
+                    人气</p >
             </div>
         </div>
 
         <div class="popBox">
             <img src="../img/popularityRank/popularityRank-img.png" alt="">
             <div class="bottom">
-                <span class="name">花轮同学</span>
-                <span class="num">
-                    <span style="color:#98D1D8">111223</span>    
-                    人气</span>
+                <p class="name">花轮同学</p>
+                <p  class="num">
+                  <span style="color:#98D1D8">111223</span>
+                    人气</p >
             </div>
         </div>
 
         <div class="popBox">
             <img src="../img/popularityRank/popularityRank-img.png" alt="">
             <div class="bottom">
-                <span class="name">花轮同学</span>
-                <span class="num">
-                    <span style="color:#98D1D8">111223</span>    
-                    人气</span>
+                <p class="name">花轮同学</p>
+                <p  class="num">
+                  <span style="color:#98D1D8">111223</span>
+                    人气</p >
             </div>
         </div>
         
         <div class="popBox">
             <img src="../img/popularityRank/popularityRank-img.png" alt="">
             <div class="bottom">
-                <span class="name">花轮同学</span>
-                <span class="num">
-                    <span style="color:#98D1D8">111223</span>    
-                    人气</span>
+                <p class="name">花轮同学</p>
+                <p  class="num">
+                  <span style="color:#98D1D8">111223</span>
+                    人气</p >
             </div>
         </div>
     </div>
@@ -154,12 +154,14 @@ li{
     font-size:0.8rem;
 }
 .bottom .name{
-    width:3.5rem;
-    display:inline-block;
+    /* width:3.5rem; */
+    /* display:inline-block; */
+    padding:0.3rem 0;
+    padding-top:0;
 }
 .bottom .num{
-        width:3.5rem;
-    display:inline-block;
+        /* width:3.5rem; */
+    /* display:inline-block; */
     font-size:0.3rem;
 }
 </style>

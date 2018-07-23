@@ -15,6 +15,7 @@ import MokaDetail from '@/components/MokaDetail'
 import popularityRank from '@/components/popularityRank'
 import rules from '@/components/rules'
 import announcement from '@/components/announcement'
+import realName from '@/components/realName'
 
 import register from '@/components/register'
 import info from '@/components/info'
@@ -159,6 +160,11 @@ export default new Router({
       path: '/announcement',
       name: 'announcement',
       component: announcement
+    },
+    {
+      path: '/realName',
+      name: 'realName',
+      component: realName
     }
   ]
 })

@@ -103,6 +103,7 @@ a{
 }
 
 .arrangement-match{
+  font-family: '微软雅黑';
     width:100%;
     height:2rem;
     line-height:2rem;
