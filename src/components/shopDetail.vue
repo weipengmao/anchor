@@ -1,0 +1,152 @@
+<template>
+<div class="shopDetail">
+    <div class="shopDetail-top clearfix">
+        <img style="float:left;margin-top:0.45rem;margin-left:1.45rem;" src="../img/detailShop-back.jpg" alt="" @touchend="back()">
+        <span style="float:left;font-size:0.9rem;margin-top:0.45rem;margin-left:1rem;">商品详情</span>
+    </div>
+    <div class="opt-swiper">
+        <swiper  :options="swiperOption" ref="mySwiper">
+        <swiper-slide><div class="fd_slide fd_slide1"><img src="../img/anchor-opt-swiper.jpg" alt=""></div></swiper-slide>
+        <swiper-slide><div class="fd_slide fd_slide2"><img src="../img/anchor-opt-swiper.jpg" alt=""></div></swiper-slide>
+        <swiper-slide><div class="fd_slide fd_slide3"><img src="../img/anchor-opt-swiper.jpg" alt=""></div></swiper-slide>
+        <swiper-slide><div class="fd_slide fd_slide4"><img src="../img/anchor-opt-swiper.jpg" alt=""></div></swiper-slide>
+        <div class="swiper-pagination "  slot="pagination"></div>
+        <!-- <img class="shut" src="../assets/close.png" alt=""> -->
+        </swiper>
+    </div>
+    <div class="shopDetail-text">
+        <p>新丝路彤年</p>
+        <p>小青柑普茶</p>
+    </div>
+    <div class="shopDetail-price"><p>￥<span>399</span>.00</p></div>
+    <div class="shopDetail-info" ><p style="font-size:1rem;margin-top:2rem;">商品信息</p><p style="text-align:left;
+    font-size:0.6rem;margin-left:1.5rem;"
+     v-for="item in series"><span style="color:rgb(159,159,159);">{{item}}：</span>小青柑普茶</p></div>
+    <div class="shopDetail-img">
+        <span style="display:inline-block;padding-top:0.3rem;">图片详情</span>
+    </div>
+    <div class="shop-img">
+        <img src="../img/shopDetail-background.png" alt="">
+    </div>
+</div>
+</template>
+
+<script>
+
+export default {
+    name:'shopDetail',
+    data(){
+        return {
+            swiperOption: {
+                initialSlide:0,//设定初始化时slide的索引
+                direction:'horizontal',//Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)。
+                loop: false,  //无限滚动
+                speed:300,//滑动速度
+                autoplay:true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable :true
+                },
+                autoplay: {
+                    disableOnInteraction: false,
+                }
+            },
+            swiperSlides: [1, 2, 3, 4],
+            price:499,
+            contents:[1,2,3,4],
+            eye:123,
+            others:123,
+            series:["系列","产地","退换货","适合人群","商品尺寸","详情"]
+        }
+    },
+    methods:{
+        back(){
+            this.$router.push("/optimization")
+        }
+    }
+}
+</script>
+
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.clearfix:after{
+    content:'';clear:both;display:block;
+}
+.shopDetail{
+    width:100%;
+    height:100%;
+}
+.shopDetail-top{
+    height:2.5rem;
+    width:100%;
+}
+.opt-swiper{
+    height:9.1rem;
+    position:relative;
+}
+#swiper{ height: 9.1rem;position:relative;
+  width:100%;}
+
+  .fd_slide{    height: 9.1rem;
+    width: 100%;
+    }
+
+
+  .fd_slide img{
+    width:100%;
+    height:9.1rem;
+  }
+
+.swiper-pagination{
+  position:absolute;bottom:0.5rem;
+}
+.swiper-pagination-bullet-active{
+    background:rgba(104,29,164,1)!important;
+}
+.shopDetail-text{
+    width:100%;
+    height:4.275rem;
+}
+.shopDetail-text p{
+    margin:0;
+    padding:0;
+    padding-top:0.5rem;
+    margin-left:-8rem;
+}
+.shopDetail-price{
+    width:100%;
+    height:2.2rem;
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #ccc;
+}
+.shopDetail-price p{
+    margin:0;
+    padding:0;
+    padding-top:0.5rem;
+    margin-left:-9rem;
+}
+.shopDetail-info{
+    width:100%;
+    height:12rem;
+    border-bottom:1px solid #ccc;
+}
+.shopDetail-info p{
+    margin:0;
+    padding:0;
+    padding-top:0.5rem;
+    margin-left:-9rem;
+}
+.shopDetail-img{
+    float: left;
+    margin-left:1.7rem;
+    margin-bottom:0.2rem;
+}
+.shop-img{
+    margin-top:2rem;
+    width:100%;
+}
+.shop-img img{
+    width:100%;
+}
+</style>

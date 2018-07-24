@@ -125,7 +125,7 @@ name: 'index',
             this.$router.push('/recommend')
         },
         toAccount(){
-            this.$router.push('/info')
+            this.$router.push('/login')
         },
     }
 }

@@ -27,6 +27,7 @@ import shop from '@/components/shop'
 import list from '@/components/list'
 import optIndex from '@/components/optIndex'
 import center from '@/components/center'
+import shopDetail from '@/components/shopDetail'
 
 Vue.use(Router)
 
@@ -96,6 +97,11 @@ export default new Router({
       path: '/order',
       name: 'order',
       component: order
+    },
+    {
+      path: '/shopDetail',
+      name: 'shopDetail',
+      component: shopDetail
     },
     {
       path: '/optimization',

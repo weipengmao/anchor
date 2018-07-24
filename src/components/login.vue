@@ -33,16 +33,19 @@
         </div>
         <div class="login-top-second">
             <div class="div">
-                <img src="../img/anchor-pay.png" alt="" width="20">
+                <img src="../img/anchor-pay.png" alt="" width="20" @touchend="toOrder()">
                 <p>待支付</p>
             </div>
-            <div class="div">2
+            <div class="div">
+                <img src="../img/anchor-go.png" alt="" width="20" @touchend="toOrder()">
                 <p>待发货</p>
             </div>
-            <div class="div">3
+            <div class="div">
+                <img src="../img/anchor-sale.png" alt="" width="20" @touchend="toOrder()">
                 <p>待收货</p>
             </div>
-            <div class="div">4
+            <div class="div">
+                <img src="../img/anchor-backover.png" alt="" width="20" @touchend="toOrder()">
                 <p>退货</p>
             </div>
         </div>
@@ -53,32 +56,38 @@
         </div>
         <div class="login-top-second">
             <div class="div">
-                <img src="../img/anchor-pay.png" alt="" width="20">
-                <p>待支付</p>
+                <img src="../img/anchor-name.png" alt="" width="20">
+                <p>报名</p>
             </div>
-            <div class="div">2
-                <p>待发货</p>
+            <div class="div">
+                <img src="../img/anchor-photo.png" alt="" width="20">
+                <p>视频</p>
             </div>
-            <div class="div">3
-                <p>待收货</p>
+            <div class="div">
+                <img src="../img/anchor-fifth.png" alt="" width="20">
+                <p>投票</p>
             </div>
-            <div class="div">4
-                <p>退货</p>
+            <div class="div">
+                <img src="../img/anchor-top.png" alt="" width="20">
+                <p>成绩公布</p>
             </div>
         </div>
         <div class="login-top-second">
             <div class="div">
-                <img src="../img/anchor-pay.png" alt="" width="20">
-                <p>待支付</p>
+                <img src="../img/anchor-one.png" alt="" width="20">
+                <p>精彩回放</p>
             </div>
-            <div class="div">2
-                <p>待发货</p>
+            <div class="div">
+                <img src="../img/anchor-three.png" alt="" width="20">
+                <p>实名认证</p>
             </div>
-            <div class="div">3
-                <p>待收货</p>
+            <div class="div">
+                <img src="../img/anchor-fouth.png" alt="" width="20">
+                <p>通告发布</p>
             </div>
-            <div class="div">4
-                <p>退货</p>
+            <div class="div">
+                <img src="../img/anchor-two.png" alt="" width="20">
+                <p>模卡发布</p>
             </div>
         </div>
     </div>
@@ -87,7 +96,11 @@
 
 <script>
 export default {
-
+    methods:{
+        toOrder(){
+            this.$router.push("/order")
+        }
+    }
 }
 </script>
 
