@@ -8,7 +8,7 @@
                 </div>
                 <div class="opt-firstConten-bottom">
                     <div class="opt-bottom-div">
-                        <div class="opt-bottom-content" v-for="key in contents" @touchend="toDetail()">
+                        <div class="opt-bottom-content" v-for="key in contents" @click="toDetail()">
                             <img src="../img/anchor-opt-content.jpg" alt="">
                             <p>小青柑普茶</p>
                             <p>价格:  <span style="color:red">￥{{price}}.00</span></p>
@@ -19,7 +19,7 @@
             <div class="opt-secondContent"></div>
             <div class="opt-bottom">
                 <div class="opt-bottom-divs clearfix">
-                    <div class="opt-bottom-contents" v-for="key in contents" @touchend="toDetail()">
+                    <div class="opt-bottom-contents" v-for="key in contents" @click="toDetail()">
                         <img src="../img/anchor-opt-content.jpg" alt="">
                         <p>小青柑普茶</p>
                         <p>价格:  <span style="color:red">￥{{price}}.00</span></p>

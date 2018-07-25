@@ -19,9 +19,9 @@
         <div class="index-inbox clearfix">
         <p class="index-rewind">
             <span class="index-title">赛事回放</span>
-            <span class="index-more"  @touchend="toArrangement()">更多&gt;&gt;&gt;</span>
+            <span class="index-more"  @click="toArrangement()">更多&gt;&gt;&gt;</span>
         </p>
-        <img src="../img/index/index-img1.jpg" alt="" @touchend="toLiveRadio()">
+        <img src="../img/index/index-img1.jpg" alt="" @click="toLiveRadio()">
         <img src="../img/index/index-img1.jpg" alt="">
         <img src="../img/index/index-img1.jpg" alt="">
         </div>
@@ -29,11 +29,11 @@
         <div class="index-inbox clearfix">
         <p class="index-rewind">
             <span class="index-title">赛事用品</span>
-            <span class="index-more" @touchend="toList()">更多&gt;&gt;&gt;</span>
+            <span class="index-more" @click="toList()">更多&gt;&gt;&gt;</span>
         </p>
-        <img src="../img/index/index-img2.jpg" alt="" @touchend="toshopDetail()">
-        <img src="../img/index/index-img2.jpg" alt="" @touchend="toshopDetail()">
-        <img src="../img/index/index-img2.jpg" alt="" @touchend="toshopDetail()">
+        <img src="../img/index/index-img2.jpg" alt="" @click="toshopDetail()">
+        <img src="../img/index/index-img2.jpg" alt="" @click="toshopDetail()">
+        <img src="../img/index/index-img2.jpg" alt="" @click="toshopDetail()">
         </div>
 
         <div class="index-inbox clearfix">
@@ -59,11 +59,21 @@
     </div>
     <!-- 底部导航 -->
     <div class="index-bottom">
-        <img src="../img/index/index-first.png" alt="" style="border-left:none;" @touchend="toHome()">
-        <img src="../img/index/index-assign.png" alt="" @touchend="toAssign()">
-        <img src="../img/index/index-discover.png" alt="" @touchend="toDiscover()">
-        <img src="../img/index/index-mall.png" alt="" @touchend="toMall()">
-        <img src="../img/index/index-personal.png" alt="" @touchend="toAccount()">
+        <div>
+            <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
+        </div>
+        <div>
+            <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
+        </div>
+        <div>
+            <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
+        </div>
+        <div>
+            <img src="../img/index/index-mall.png" alt="" @click="toMall()">
+        </div>
+        <div>
+            <img src="../img/index/index-personal.png" alt="" @click="toAccount()">
+        </div>
     </div>
 </div>
 
@@ -250,7 +260,6 @@ a{
     /* margin:0.2rem 0; */
     margin-left:0.4rem;
     float:left;
-    margin:
 }
 
 
@@ -272,10 +281,10 @@ align-items: center;
 flex-direction: row;
 }
 .index-bottom img{
-    width:15%;
-    height:2.3rem;
-    flex:1;
+    width:54px;
     display:inline-block;
-    border-left:1px solid #fff;
+}
+.index-bottom div{
+    width:20%;
 }
 </style>

@@ -6,10 +6,10 @@
             border-radius:50%;border:1px solid black;display:inline-block;float:left;">
             </div>
             <span class="login">登录/注册</span>
-            <span class="span" @touchend="toInfor()">编辑</span>
+            <span class="span" @click="toInfor()">编辑</span>
             <img src="../img/anchor-pane.png" >
         </div>
-        <div class="login-top-second">
+        <div class="login-top-second" style="font-size:0.62rem;">
             <div class="div">1
                 <p>我的收藏</p>
             </div>
@@ -23,29 +23,29 @@
             </div>
         </div>
         <img src="../img/anchor-shadow.png" width="100%;" height="5" style="border-radius: 0 0 20px 20px;
-        margin-bottom:4px;">
+        margin-bottom:0.1rem;">
     </div>
     <div class="login-center">
        <div class="login-top-first clearfix">
             <span class="login">我的订单</span>
             <img src="../img/anchor-arrow.png" >
-            <span class="span" @touchend="toOrder()">查看全部订单</span>
+            <span class="span" @click="toOrder()">查看全部订单</span>
         </div>
         <div class="login-top-second">
             <div class="div">
-                <img src="../img/anchor-pay.png" alt="" width="20" @touchend="toOrder()">
+                <img src="../img/anchor-pay.png" alt="" width="20" @click="toOrder()">
                 <p>待支付</p>
             </div>
             <div class="div">
-                <img src="../img/anchor-go.png" alt="" width="20" @touchend="toOrder()">
+                <img src="../img/anchor-go.png" alt="" width="20" @click="toOrder()">
                 <p>待发货</p>
             </div>
             <div class="div">
-                <img src="../img/anchor-sale.png" alt="" width="20" @touchend="toOrder()">
+                <img src="../img/anchor-sale.png" alt="" width="20" @click="toOrder()">
                 <p>待收货</p>
             </div>
             <div class="div">
-                <img src="../img/anchor-backover.png" alt="" width="20" @touchend="toOrder()">
+                <img src="../img/anchor-backover.png" alt="" width="20" @click="toOrder()">
                 <p>退货</p>
             </div>
         </div>
@@ -55,42 +55,43 @@
             <span class="login">我的订单</span>
         </div>
         <div class="login-top-second">
-            <div class="div" @touchend="toArrangement()">
+            <div class="div" @click="toArrangement()">
                 <img src="../img/anchor-name.png" alt="" width="20">
                 <p>报名</p>
             </div>
-            <div class="div" @touchend="toDiscover()">
+            <div class="div" @click="toDiscover()">
                 <img src="../img/anchor-photo.png" alt="" width="20">
                 <p>视频</p>
             </div>
-            <div class="div" @touchend="toArrangement()">
+            <div class="div" @click="toArrangement()">
                 <img src="../img/anchor-fifth.png" alt="" width="20">
                 <p>投票</p>
             </div>
-            <div class="div" @touchend="toArrangement()">
+            <div class="div" @click="toArrangement()">
                 <img src="../img/anchor-top.png" alt="" width="20">
                 <p>成绩公布</p>
             </div>
         </div>
         <div class="login-top-second">
-            <div class="div" @touchend="toArrangement()">
+            <div class="div" @click="toArrangement()">
                 <img src="../img/anchor-one.png" alt="" width="20">
                 <p>精彩回放</p>
             </div>
-            <div class="div" @touchend="toRealName()">
+            <div class="div" @click="toRealName()">
                 <img src="../img/anchor-three.png" alt="" width="20">
                 <p>实名认证</p>
             </div>
-            <div class="div" @touchend="toPublish()">
+            <div class="div" @click="toPublish()">
                 <img src="../img/anchor-fouth.png" alt="" width="20">
                 <p>通告发布</p>
             </div>
-            <div class="div" @touchend="toMokaPublish()">
+            <div class="div" @click="toMokaPublish()">
                 <img src="../img/anchor-two.png" alt="" width="20">
                 <p>模卡发布</p>
             </div>
         </div>
     </div>
+    <div class="login-bttom"></div>
 </div>
 </template>
 
@@ -138,7 +139,7 @@ export default {
 }
 .login-container{
     position:relative;
-    height:100%;
+    height:120%;
     width:100%;
     background:url("../img/anchor-hightLight.png") no-repeat center;
     background-size: 100% 100%;
@@ -203,7 +204,7 @@ export default {
     vertical-align: bottom;
 }
 .login-top-second .div p{
-    font-size:0.3rem;
+    font-size:0.55rem;
     margin:0;
 }
 
@@ -242,5 +243,12 @@ export default {
     width:22%;
     display: inline-block;
     vertical-align: bottom;
+}
+.login-bttom{
+    position:absolute;
+    width:100%;
+    height:2rem;
+    bottom:0;
+    background: transparent;
 }
 </style>

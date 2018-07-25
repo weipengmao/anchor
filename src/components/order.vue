@@ -1,7 +1,7 @@
 <template>
     <div class="order-container">
         <div class="order-top clearfix">
-            <img src="../img/anchor-info-arrow.png" alt="" @touchend="toOpt">
+            <img src="../img/anchor-info-arrow.png" alt="" @click="toOpt">
             <span>我的订单</span>
         </div>
         <div class="order-bottom">

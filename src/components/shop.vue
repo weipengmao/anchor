@@ -3,7 +3,7 @@
         <div class="order-content">
             <div class="order-content-pay">
                 <div class="order-pay-text" v-for="(item,key) in payItem" >
-                    <span style="float:left" :id="'check'+key" class="checkboxFourx" @touchend.stop="checked(key)"></span>
+                    <span style="float:left" :id="'check'+key" class="checkboxFourx" @click.stop="checked(key)"></span>
                     <div class="order-content-left">
                         <img src="../img/anchor-order-img.png" width="90" >
                     </div>
@@ -15,24 +15,24 @@
                         <span>￥<span :id="'price'+key" style="margin:0;">{{price}}</span>.00</span>
                     </div>
                     <div class="order-content-text">
-                        <p @touchend ="add(key)" style="text-align:center;border-right:1px solid #ccc;padding-right:0.2rem;">+</p>
-                        <input type="text" v-model="value[key]" style="padding-left:0.3rem;" :id="'input'+key">
-                        <p @touchend ="radiu(key)" style="border-left:1px solid #ccc;padding-left:0.2rem;">-</p>
-                    </div>
-                    <div class="shop-bottom clearfix">
-                        <div class="bottom-left">
-                            <div style="position:relative;">
-                                <span id="check" class="checkboxFoury" @touchend="checkedall()"></span>
-                                <span style="font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:2.5rem">全选</span>
-                                <span style="color:#ccc;font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:1rem">合计：
-                                <span style="color:black;font-size:0.6rem;">￥<span>{{allPrice}}</span>.00</span></span>
-                            </div>
-                        </div>
-                        <div class="bottom-right">
-                            <span>结算</span>
-                        </div>
+                        <p @click ="add(key)" style="text-align:center;border-right:1px solid #ccc;padding-right:0.2rem;">+</p>
+                        <input type="text" v-model="value[key]" style="padding-left:0.3rem;padding-top:0.28rem;" :id="'input'+key">
+                        <p @click ="radiu(key)" style="border-left:1px solid #ccc;padding-left:0.2rem;">-</p>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="shop-bottom clearfix">
+            <div class="bottom-left ">
+                <div style="position:relative;">
+                    <span id="check" class="checkboxFoury" @click="checkedall()"></span>
+                    <span style="font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:2.5rem">全选</span>
+                    <span style="color:#ccc;font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:1rem">合计：
+                    <span style="color:black;font-size:0.6rem;">￥<span>{{allPrice}}</span>.00</span></span>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <span>结算</span>
             </div>
         </div>
     </div>
@@ -110,7 +110,7 @@ export default {
         return {
             price:399,
             //栏目自己配置
-            payItem:[1,2,3,4],
+            payItem:[1,2],
             num:0,
             val:0,
             allPrice:0,
@@ -122,6 +122,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.order-container{
+    display: flex;
+    height:91%;
+    flex-direction: column;
+}
 .clearfix:after{
     content:'';
     display: block;
@@ -130,10 +135,10 @@ export default {
 }
 .order-content-pay{
     background: #fff;
-    height:100%;
 }
 .order-content{
     flex:1;
+    overflow: auto;
 }
 .order-pay-text{
     position: relative;
@@ -171,7 +176,7 @@ export default {
 }
 .order-content-right span{
     display: inline-block;
-    margin:0.7rem 1.2rem 0 0rem;
+    margin:0.7rem 1.3rem 0 0rem;
     font-weight: 700;
     color: red;
 }
@@ -186,13 +191,13 @@ export default {
     outline: none;
     border:none;
     height:0.5rem;
-    vertical-align: middle;
+    vertical-align: top;
 }
 .order-content-text{
     position:absolute;
     bottom:8%;
-    right:1.2rem;
-    width:3.2rem;
+    right:1.3rem;
+    width:3.8rem;
     border:1px solid #ccc;
     height:1rem;
 }
@@ -244,7 +249,6 @@ input::-webkit-input-placeholder{text-align: center;}
 }
 .shop-bottom{
     height:3rem;
-    position:fixed;
     bottom:0;
     width:100%;
 }

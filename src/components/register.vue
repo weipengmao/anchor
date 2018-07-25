@@ -9,7 +9,7 @@
             <span>获取验证码</span>
             </div>
             <div class="button">
-            <span>登录</span>
+            <span @click="toIndex">登录</span>
             </div>
         </div>
     </div>
@@ -17,7 +17,11 @@
 
 <script>
 export default {
-
+    methods:{
+        toIndex(){
+            this.$router.push("/index")
+        }
+    }
 }
 </script>
 

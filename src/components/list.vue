@@ -2,7 +2,7 @@
     <div class="list-container clearfix">
         <div class="list-left">
             <div class="list-ul" v-for="(item,key) in lis">
-                <ul class="list-left-ul" @touchend="getLi"><span>{{ulName}}</span></ul>
+                <ul class="list-left-ul" @click="getLi"><span>{{ulName}}</span></ul>
             </div>
         </div>
         <div class="list-right">
@@ -22,7 +22,7 @@ export default {
     mounted(){
         var li = $(".list-left-ul");
         $(li[0]).addClass("activeLi");
-        li.on("touchend",function(){
+        li.on("click",function(){
             for(let i=0;i<li.length;i++){
                $(li[i]).removeClass("activeLi")
             }
@@ -108,7 +108,7 @@ export default {
     width:3rem;
 }
 .list-right-name p{
-    font-size:0.2rem;
+    font-size:0.5rem;
     margin:0;
     padding:0;
     text-align: center;

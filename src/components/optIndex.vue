@@ -24,7 +24,7 @@ export default {
         var li = document.querySelectorAll(".opt-top-text span");
         var uid;
         for(let i=0;i<li.length;i++){
-            li[i].ontouchend = function(){
+            li[i].onclick = function(){
                 $(this).addClass("active").siblings().removeClass("active");
                 uid = $(this).attr("id")+i;
                 

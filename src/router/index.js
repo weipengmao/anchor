@@ -28,6 +28,7 @@ import list from '@/components/list'
 import optIndex from '@/components/optIndex'
 import center from '@/components/center'
 import shopDetail from '@/components/shopDetail'
+import disc from '@/components/disc'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'register',
+      component: register
+    },
+    {
+      path: '/index',
       name: 'index',
       component: index
     },
@@ -61,7 +67,14 @@ export default new Router({
     {
       path: '/discover',
       name: 'discover',
-      component: discover
+      component: discover,
+      children:[
+        {
+          path: '/disc',
+          name: 'disc',
+          component: disc
+        }
+      ]
     },
     {
       path: '/score',

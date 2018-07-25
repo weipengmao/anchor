@@ -15,9 +15,9 @@
                 <div class="opt-content"></div>
                 <div class="clearfix">
                     <p style="font-size:0.8rem;float:left;font-weight:700;text-align:left">传承经典</p>
-                    <p style="font-size:0.2rem;float:left;text-align:left;margin:0;">普洱茶采集于核心产区——云南西双版纳，普洱有着悠久的茶历史,
+                    <p style="font-size:0.4rem;float:left;text-align:left;margin:0;">普洱茶采集于核心产区——云南西双版纳，普洱有着悠久的茶历史,
             是“茶马古道”的重要驿站。</p>
-                    <p style="font-size:0.2rem;float:left;text-align:left;">小青柑采摘自核心产区——广东新会，新会青柑大小适中颗粒饱满,
+                    <p style="font-size:0.4rem;float:left;text-align:left;">小青柑采摘自核心产区——广东新会，新会青柑大小适中颗粒饱满,
             表皮油包明显，芳香浓郁，久泡余香，回甘持久</p>
                 </div>
                 <div class="opt-content-eye clearfix">
