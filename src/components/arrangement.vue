@@ -12,9 +12,9 @@
     <P class="arrangement-match">
         赛事
     </P>
-    <img src="../img/arrangement/arrangement-img1.jpg" alt="">
-    <img src="../img/arrangement/arrangement-img2.jpg" alt="">
-    <img src="../img/arrangement/arrangement-img3.png" alt="">
+    <img src="../img/arrangement/arrangement-img1.jpg" alt="" @click="toCities()">
+    <img src="../img/arrangement/arrangement-img2.jpg" alt="" @click="toCities()">
+    <img src="../img/arrangement/arrangement-img3.png" alt="" @click="toCities()">
     </div>
 
     
@@ -65,6 +65,11 @@ export default {
       swiper,
       swiperSlide
     },
+    methods:{
+      toCities(){
+        this.$router.push('/cities')
+      }
+    }
 }
 </script>
 

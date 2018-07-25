@@ -14,7 +14,7 @@
                 <!--    照片添加    -->
         <div class="z_photo">
             <div class="z_file">
-                <!-- <input type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" /> -->
+                <input type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');"  style="opacity:0.1"/>
 
             </div>
 

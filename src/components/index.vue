@@ -19,9 +19,9 @@
         <div class="index-inbox clearfix">
         <p class="index-rewind">
             <span class="index-title">赛事回放</span>
-            <span class="index-more">更多&gt;&gt;&gt;</span>
+            <span class="index-more"  @touchend="toArrangement()">更多&gt;&gt;&gt;</span>
         </p>
-        <img src="../img/index/index-img1.jpg" alt="">
+        <img src="../img/index/index-img1.jpg" alt="" @touchend="toLiveRadio()">
         <img src="../img/index/index-img1.jpg" alt="">
         <img src="../img/index/index-img1.jpg" alt="">
         </div>
@@ -29,17 +29,17 @@
         <div class="index-inbox clearfix">
         <p class="index-rewind">
             <span class="index-title">赛事用品</span>
-            <span class="index-more">更多&gt;&gt;&gt;</span>
+            <span class="index-more" @touchend="toList()">更多&gt;&gt;&gt;</span>
         </p>
-        <img src="../img/index/index-img2.jpg" alt="">
-        <img src="../img/index/index-img2.jpg" alt="">
-        <img src="../img/index/index-img2.jpg" alt="">
+        <img src="../img/index/index-img2.jpg" alt="" @touchend="toshopDetail()">
+        <img src="../img/index/index-img2.jpg" alt="" @touchend="toshopDetail()">
+        <img src="../img/index/index-img2.jpg" alt="" @touchend="toshopDetail()">
         </div>
 
         <div class="index-inbox clearfix">
         <p class="index-rewind">
             <span class="index-title">赛事投票</span>
-            <span class="index-more">更多&gt;&gt;&gt;</span>
+            <span class="index-more" @click="toArrangement()">更多&gt;&gt;&gt;</span>
         </p>
         <img src="../img/index/index-img1.jpg" alt="">
         <img src="../img/index/index-img1.jpg" alt="">
@@ -49,7 +49,7 @@
         <div class="index-inbox clearfix">
         <p class="index-rewind">
             <span class="index-title">赛事成绩</span>
-            <span class="index-more">更多&gt;&gt;&gt;</span>
+            <span class="index-more" @click="toArrangement()">更多&gt;&gt;&gt;</span>
         </p>
         <img src="../img/index/index-img1.jpg" alt="">
         <img src="../img/index/index-img1.jpg" alt="">
@@ -59,11 +59,11 @@
     </div>
     <!-- 底部导航 -->
     <div class="index-bottom">
-        <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
-        <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
-        <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
-        <img src="../img/index/index-mall.png" alt="" @click="toMall()">
-        <img src="../img/index/index-personal.png" alt="" @click="toAccount()">
+        <img src="../img/index/index-first.png" alt="" style="border-left:none;" @touchend="toHome()">
+        <img src="../img/index/index-assign.png" alt="" @touchend="toAssign()">
+        <img src="../img/index/index-discover.png" alt="" @touchend="toDiscover()">
+        <img src="../img/index/index-mall.png" alt="" @touchend="toMall()">
+        <img src="../img/index/index-personal.png" alt="" @touchend="toAccount()">
     </div>
 </div>
 
@@ -122,11 +122,23 @@ name: 'index',
             this.$router.push('/discover')
         },
         toMall(){
-            this.$router.push('/recommend')
+            this.$router.push('/optimization')
         },
         toAccount(){
             this.$router.push('/login')
         },
+        toLiveRadio(){
+            this.$router.push('/liveRadio')
+        },
+        toshopDetail(){
+            this.$router.push('/shopDetail')
+        },
+        toArrangement(){
+            this.$router.push('/arrangement')
+        },
+        toList(){
+            this.$router.push('/optimization')
+        }
     }
 }
 

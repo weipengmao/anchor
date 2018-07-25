@@ -6,7 +6,7 @@
             border-radius:50%;border:1px solid black;display:inline-block;float:left;">
             </div>
             <span class="login">登录/注册</span>
-            <span class="span">编辑</span>
+            <span class="span" @touchend="toInfor()">编辑</span>
             <img src="../img/anchor-pane.png" >
         </div>
         <div class="login-top-second">
@@ -29,7 +29,7 @@
        <div class="login-top-first clearfix">
             <span class="login">我的订单</span>
             <img src="../img/anchor-arrow.png" >
-            <span class="span">查看全部订单</span>
+            <span class="span" @touchend="toOrder()">查看全部订单</span>
         </div>
         <div class="login-top-second">
             <div class="div">
@@ -55,37 +55,37 @@
             <span class="login">我的订单</span>
         </div>
         <div class="login-top-second">
-            <div class="div">
+            <div class="div" @touchend="toArrangement()">
                 <img src="../img/anchor-name.png" alt="" width="20">
                 <p>报名</p>
             </div>
-            <div class="div">
+            <div class="div" @touchend="toDiscover()">
                 <img src="../img/anchor-photo.png" alt="" width="20">
                 <p>视频</p>
             </div>
-            <div class="div">
+            <div class="div" @touchend="toArrangement()">
                 <img src="../img/anchor-fifth.png" alt="" width="20">
                 <p>投票</p>
             </div>
-            <div class="div">
+            <div class="div" @touchend="toArrangement()">
                 <img src="../img/anchor-top.png" alt="" width="20">
                 <p>成绩公布</p>
             </div>
         </div>
         <div class="login-top-second">
-            <div class="div">
+            <div class="div" @touchend="toArrangement()">
                 <img src="../img/anchor-one.png" alt="" width="20">
                 <p>精彩回放</p>
             </div>
-            <div class="div">
+            <div class="div" @touchend="toRealName()">
                 <img src="../img/anchor-three.png" alt="" width="20">
                 <p>实名认证</p>
             </div>
-            <div class="div">
+            <div class="div" @touchend="toPublish()">
                 <img src="../img/anchor-fouth.png" alt="" width="20">
                 <p>通告发布</p>
             </div>
-            <div class="div">
+            <div class="div" @touchend="toMokaPublish()">
                 <img src="../img/anchor-two.png" alt="" width="20">
                 <p>模卡发布</p>
             </div>
@@ -99,7 +99,30 @@ export default {
     methods:{
         toOrder(){
             this.$router.push("/order")
+        },
+        toInfor(){
+            this.$router.push("/info")
+        },
+        toOrder(){
+            this.$router.push("/order")
+        },
+        toArrangement(){
+            this.$router.push("/arrangement")
+        },
+        toDiscover(){
+            this.$router.push("/discover")
+        },
+        toRealName(){
+            this.$router.push("/realName")
+        },
+        toPublish(){
+            this.$router.push("/publish")
+        },
+        toMokaPublish(){
+            this.$router.push("/MokaPublish")
         }
+            
+        
     }
 }
 </script>

@@ -79,7 +79,7 @@ li{
     width:5rem;height:2.5rem;
     line-height: 2.5rem;
     font-size: 0.9rem;
-    color:#BEA4D0;
+    color:#fff;
     text-align: center;
     float:left;
     background:#48007C;

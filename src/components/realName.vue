@@ -46,7 +46,7 @@
                 <!--    照片添加    -->
         <div class="z_photo">
             <div class="z_file">
-                <input type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" />
+                <input type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" style="opacity:0.1;"/>
 
             </div>
 
@@ -128,13 +128,13 @@ export default {
             var sure = document.getElementsByClassName("z_sure")[0];
             for (var j = 0; j < imgList.length; j++) {
                 imgList[j].index = j;
-                imgList[j].onclick = function() {
+                imgList[j].ontouchend = function() {
                     var t = this;
                     mask.style.display = "block";
-                    cancel.onclick = function() {
+                    cancel.ontouchend = function() {
                         mask.style.display = "none";
                     };
-                    sure.onclick = function() {
+                    sure.ontouchend = function() {
                         mask.style.display = "none";
                         t.style.display = "none";
                     };
