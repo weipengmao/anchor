@@ -16,6 +16,9 @@ import popularityRank from '@/components/popularityRank'
 import rules from '@/components/rules'
 import announcement from '@/components/announcement'
 import realName from '@/components/realName'
+import assign from '@/components/assign'
+import assignSuccess from '@/components/assignSuccess'
+import payInfor from '@/components/payInfor'
 
 import register from '@/components/register'
 import info from '@/components/info'
@@ -184,6 +187,21 @@ export default new Router({
       path: '/realName',
       name: 'realName',
       component: realName
+    },
+    {
+      path: '/assign',
+      name: 'assign',
+      component: assign
+    },
+    {
+      path: '/assignSuccess',
+      name: 'assignSuccess',
+      component: assignSuccess
+    },
+    {
+      path: '/payInfor',
+      name: 'payInfor',
+      component: payInfor
     }
   ]
 })

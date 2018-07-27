@@ -282,9 +282,11 @@ flex-direction: row;
 }
 .index-bottom img{
     width:54px;
+    /* border-right:1px solid #fff; */
     display:inline-block;
 }
 .index-bottom div{
     width:20%;
+    padding-top:0.3rem;
 }
 </style>

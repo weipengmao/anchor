@@ -1,7 +1,7 @@
 <template>
-<div>
+<div id="disc">
     <!-- 比赛 -->
-    <div class="clearfix" style="margin-bottom:1rem;">
+    <div class="clearfix" style="margin-bottom:1rem;" >
     <div class="discover-box clearfix">
         <div class="discover-left">
         <img src="../img/discover/discover-img3.png" alt="">
