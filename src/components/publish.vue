@@ -27,7 +27,10 @@
         <input type="text" placeholder="*联系人">
         <input type="text" placeholder="*联系方式">
         <!-- 提交审核 -->
-        <input type="submit" value="提交审核" class="publish-submit">
+        <div type="submit" value="发布" class="publish-submit">
+            <span style="display:inline-block;padding-top:0.6rem;font-size:1.0rem;">提交审核
+            </span>
+        </div>
     </form>
 
                     <!--遮罩层-->
@@ -44,8 +47,6 @@
     </div>
     </div>
 
-    
-</div>
 </template>
 
 <script>
@@ -199,7 +200,7 @@ li{
             padding:0 0.3rem;
             overflow: auto;
             clear: both;
-           margin: 0.5rem auto;
+            margin: 0.5rem 0.4rem;
             border: 1px solid #DF8AFF;
         }
         

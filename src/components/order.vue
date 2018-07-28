@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="order-content-pay">
-                <div class="order-pay-text" v-for="item in payItemThree">
+                <div class="order-pay-text" style="height:9rem;" v-for="item in payItemThree">
                     <div class="order-content-left">
                         <img src="../img/anchor-order-img.png" width="90" >
                     </div>
@@ -69,6 +69,21 @@
                     <div class="order-content-right">
                         <span>￥{{price}}.00</span>
                         <p style="color:red;border:1px solid red;">待评价</p>
+                    </div>
+                    <div class="block" style="display:inline-block;padding-top:0.2rem;width:100%;
+                    text-align:right;">
+                        <span style="float:left;padding-left:0.6rem;font-size:0.9rem;">商品评分</span>
+                       <el-rate v-model="value1" style="width:85%"></el-rate>
+                    </div>
+                    <div class="block" style="display:inline-block;padding-top:0.2rem;width:100%;
+                    text-align:right;">
+                        <span style="float:left;padding-left:0.6rem;font-size:0.9rem;">物流评分</span>
+                       <el-rate v-model="value2" style="width:85%"></el-rate>
+                    </div>
+                    <div class="block" style="display:inline-block;padding-top:0.2rem;width:100%;
+                    text-align:right;">
+                        <span style="float:left;padding-left:0.6rem;font-size:0.9rem;">客服评分</span>
+                       <el-rate v-model="value3" style="width:85%"></el-rate>
                     </div>
                 </div>
             </div>
@@ -118,8 +133,11 @@ export default {
             payItem:[1,2,3,4],
             payItemOne:[1,2,3,4],
             payItemTwo:[1,2,3,4],
-            payItemThree:[1,2,3,4],
-            payItemFouth:[1,2,3,4]
+            payItemThree:[1],
+            payItemFouth:[1,2,3,4],
+            value1: null,
+            value2: null,
+            value3: null
         }
     }
 }
@@ -175,6 +193,8 @@ export default {
     color:rgba(185,0,255,1);
     margin-top:0.7rem;
     font-weight: 700;
+    padding-top:0.1rem;
+    border:0;
 }
 .active{
     border-radius: 0.5rem;
@@ -188,6 +208,7 @@ export default {
 }
 .order-content{
     flex:1;
+    overflow-y: auto;
 }
 .order-pay-text{
     height:4.75rem;

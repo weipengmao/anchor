@@ -1,93 +1,69 @@
 <template>
-    <div id="assign">
-            <router-view to="/"></router-view>
+    <div id="assigns">
+            <div class="assign-content" v-for="(item,key) in num" @click="toTou">
+              <div class="assign-content-top">
+                <p>中国国际少儿模特大赛</p>
+                <p style="font-size:0.45rem;padding-top:0.2rem;font-weight:normal;"> 广东广州<span style="font-size:0.45rem;padding-left:4rem;">剩余30天截至报名</span></p>
+              </div>
+              <div class="assign-content-bottom">
+                <p>已经有xx人报名<span style="font-size:0.6rem;padding-left:9rem;">报名</span></p>
+              </div>
+            </div>
+            <div style="height:3rem;width:100%;"></div>
+                <!-- 底部导航 -->
+          <div class="index-bottom">
+              <div>
+                  <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
+                  <span style="display:inline-block;border-right:1px solid #fff;
+                  height:1.6rem;margin-left:0.08rem;"></span>
+              </div>
+              <div>
+                  <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
+                  <span style="display:inline-block;border-right:1px solid #fff;
+                  height:1.6rem;margin-left:0.08rem;"></span>
+              </div>
+              <div>
+                  <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
+                  <span style="display:inline-block;border-right:1px solid #fff;
+                  height:1.6rem;margin-left:0.08rem;"></span>
+              </div>
+              <div>
+                  <img src="../img/index/index-mall.png" alt="" @click="toMall()">
+                  <span style="display:inline-block;border-right:1px solid #fff;
+                  height:1.6rem;margin-left:0.08rem;"></span>
+              </div>
+              <div style="border-right:0;">
+                  <img src="../img/index/index-personal.png" alt="" @click="toAccount()" >
+              </div>
+          </div>
     </div>
 </template>
 <script>
 export default {
   name: "assign",
   data() {
-    return {};
-  },
-  mounted() {
-    //多文件上传
-    function imgChange(obj1, obj2) {
-      //获取点击的文本框
-      var file = document.getElementById("file");
-      //存放图片的父级元素
-      var imgContainer = document.getElementsByClassName(obj1)[0];
-      //获取的图片文件
-      var fileList = file.files;
-      console.log(fileList);
-      //文本框的父级元素
-      var input = document.getElementsByClassName(obj2)[0];
-      var imgArr = [];
-      //遍历获取到得图片文件
-      for (var i = 0; i < fileList.length; i++) {
-        var imgUrl = window.URL.createObjectURL(file.files[i]);
-        console.log(imgUrl);
-        imgArr.push(imgUrl);
-        var img = document.createElement("img");
-        img.setAttribute("src", imgArr[i]);
-        var imgAdd = document.createElement("div");
-        imgAdd.setAttribute("class", "z_addImg");
-        imgAdd.appendChild(img);
-        imgContainer.appendChild(imgAdd);
-      }
-
-      imgRemove();
-    }
-
-    function imgRemove() {
-      var imgList = document.getElementsByClassName("z_addImg");
-      var mask = document.getElementsByClassName("z_mask")[0];
-      var cancel = document.getElementsByClassName("z_cancel")[0];
-      var sure = document.getElementsByClassName("z_sure")[0];
-      for (var j = 0; j < imgList.length; j++) {
-        imgList[j].index = j;
-        imgList[j].ontouchend = function() {
-          var t = this;
-          mask.style.display = "block";
-          cancel.ontouchend = function() {
-            mask.style.display = "none";
-          };
-          sure.ontouchend = function() {
-            mask.style.display = "none";
-            t.style.display = "none";
-          };
-        };
-      }
-    }
-    function subtj() {
-      console.log(file.files);
-    }
-    var doc = $(".assign-tp div span");
-    for(let i =0;i<doc.length;i++){
-        $(doc[i]).click(()=>{
-            for(var j=0;j<doc.length;j++){
-                if($(doc[j]).hasClass("active")){
-                    $(doc[j]).removeClass("active");
-                }
-            }
-            $(doc[i]).addClass("active");
-        })
-    }
+    return {
+      num:[1,2,3]
+    };
   },
   methods: {
-    submit() {
-      this.$router.push("/assignPay");
+    toTou(){
+      this.$router.push("/assign")
     },
-    tosign(){
-      this.$router.push("/assign");
+    toHome() {
+      this.$router.push("/index");
     },
-    toBack(){
-      this.$router.push("/assignBack");
+    toAssign() {
+      this.$router.push("/arrangement");
     },
-    toGetsign(){
-      this.$router.push("/assignTou");
+    toDiscover() {
+      this.$router.push("/discover");
     },
-    toScore(){
-      this.$router.push("/assignScore"); 
+    toMall() {
+      this.$router.push("/optimization");
+    },
+    toAccount() {
+      this.$router.push("/login");
     }
   }
 };
@@ -112,12 +88,37 @@ li {
   display: block;
 }
 
-#assign {
+#assigns {
   width: 100%;
-  height: 100%;
-  background: url("../img/assign/assign-bg.png") center no-repeat;
   background-size: 100% 100%;
-  overflow-y: auto;
+  overflow-y: auto; 
+  background: #fff;
+}
+/* 底部导航 */
+.index-bottom {
+  width: 100%;
+  height: 3rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #ad0eff;
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Chrome */
+  display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.index-bottom img {
+  width: 54px;
+  /* border-right:1px solid #fff; */
+  display: inline-block;
+  vertical-align:bottom;
+}
+.index-bottom div {
+  width: 20%;
 }
 .top {
   width: 100%;
@@ -321,7 +322,11 @@ p[type="submit"] span {
   display: inline-block;
   margin-top: 0.25rem;
 }
-
+.assign-tp{
+    padding-top:0.2rem;
+    margin-bottom:0.4rem;
+    width:100%;
+}
 .assign-tp div{
     font-size:0.8rem;
     width:23%;
@@ -341,5 +346,45 @@ p[type="submit"] span {
     padding-bottom:0.1rem;
     border-bottom:1px solid rgb(81,0,151);
 }
+.assign-img{
+  height:8.5rem;
+  width:100%;
+  background:url("../img/toTou.jpg") no-repeat;
+  background-size:100% 100%; 
+}
+.assign-content{
+  background: #940dc5;
+  width:15rem;
+  height:4rem;
+  margin:0.5rem;
+  margin-top:0.9rem;
+}
+.assign-content-bottom{
+  color: #940dc5;
+  width:100%;
+  margin-bottom:3.8rem;
+  /* height:0.8rem; */
+  text-align: left;
+  font-size:0.5rem;
+  background: #fff;
+  font-weight: bold;
+}
+.assign-content-bottom{
+  text-align: right;
+  border:1px solid #940dc5;
+}
+.assign-content-bottom span{
+  line-height:0.5rem;
+}
+.assign-content-top p{
+  display: inline-block;
+  text-align: left;
+  font-size:1rem;
+  padding:0.5rem 0 0 0.4rem;
+  width:100%;
+  font-weight: bold;
+  color:#fff;
+}
+
 </style>
 

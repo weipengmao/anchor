@@ -14,3 +14,9 @@
     width:60%;
     float: left;
 }
+.el-rate__item{
+    width:1.8rem;
+}
+.el-rate{
+    padding-left:1rem;
+}

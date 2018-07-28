@@ -8,7 +8,7 @@
         <div class="list-right">
             <div class="list-right-img"></div>
             <div class="list-right-nameNum clearfix">
-                <div class="list-right-name" v-for="item in listName">
+                <div class="list-right-name" v-for="item in listName" @click="toShop">
                     <img src="../img/anchor-opt-content.jpg" alt="">
                     <p>商品名称</p>
                 </div>
@@ -38,6 +38,9 @@ export default {
     },
     methods:{
         getLi(){},
+        toShop(){
+            this.$router.push("/shopDetail")
+        }
     }
 }
 </script>
@@ -54,6 +57,7 @@ export default {
     width:100%;
     height:100%;
     overflow-y: auto;
+    margin-bottom:3rem;
 }
 .list-left{
     float: left;

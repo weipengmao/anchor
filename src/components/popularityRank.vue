@@ -1,5 +1,11 @@
 <template>
     <div class="clearfix" id="popularityRank">
+        <div class="assign-tp">
+            <div @click="tosign"><span>报名</span></div>
+            <div @click="toBack"><span>回放</span></div>
+            <div @click="toGetsign"><span class="active">投票</span></div>
+            <div @click="toScore"><span>成绩</span></div>
+        </div>
         <div class="popularity-top clearfix">
             <img src="../img/popularityRank/popularityRank-img1.png" alt="">
             <img src="../img/popularityRank/popularityRank-img2.png" alt="">
@@ -72,6 +78,20 @@
             return{
                 
             }
+        },
+        methods:{
+            tosign(){
+            this.$router.push("/assign");
+            },
+            toBack(){
+            this.$router.push("/assignBack");
+            },
+            toGetsign(){
+            this.$router.push("/assignTou");
+            },
+            toScore(){
+            this.$router.push("/assignScore"); 
+            }
         }
     }
 </script>
@@ -91,7 +111,7 @@ li{
 #popularityRank{
     width:100%;
     /* height:100vh; */
-    background:url('../img/popularityRank/popularityRank-bg.png') center no-repeat;
+    background:url('../img/assign/assign-bg.png') center no-repeat;
     background-size:100% 100%;
 }
 

@@ -1,7 +1,7 @@
 <template>
     <div id="assignSuccess">
             <!-- 头部三个广告 -->
-            <div class="top-succ clearfix">
+            <div class="top-pay clearfix">
                 <img src="../img/assign/assign_01.png" alt="">
                 <img src="../img/assign/assign_02.png" alt="" style="width:27%;margin-left:0;">
                 <img src="../img/assign/assign_03.png" alt="" style="width:20%;margin-left:0;">
@@ -11,27 +11,12 @@
             <!-- 报名成功 -->
             <div class="form clearfix">
                 <!-- 标题 -->
-                <p class="title">恭喜您报名成功!</p>
-                <!-- 您的参赛编码为 -->
-                <p class="number">
-                    您的参赛编码为：   <span style="color:red">1231231</span>
+                <p class="title-pay">报名信息</p>
+                <!-- 您的参赛信息 -->
+                <p v-for="info in info"  class="number">
+                    <span style="display:inline-block;margin-right:1.5rem;margin-left:1.5rem;width:3rem;text-align:left;">{{info}}</span><span v-for="name in name" style="color:#fff">{{name}}</span>
                 </p>
-                <!-- 扫描下方二维码 -->
-                <p class="tip">
-                    扫描下方二维码</br>了解更多的赛事详情
-                </p>
-                <!-- 二维码 -->
-                <div class="code">
-                    <img src="../img/assign/assign-code.png" alt="">
-                </div>
-                <!-- 请截图保存好 -->
-                <p class="tip" style="width:100%;">
-                    请截图保存好本页面</br>以便日后赛事安排 !<br/>
-                    工作人员将在10个工作日以内以电话<br/>或短信的方式联系您 !<br/>请留意！
-                </p>
-                <!-- 保存到相册 -->
-                        <p class="submit" @click="submit()">保存到相册</P>
-                
+                <p type="submit" @click="submit()"><span>确认支付</span></p>
             </div>
     </div>
 </template>
@@ -39,12 +24,23 @@
 export default {
   name: "assignSuccess",
   data() {
-    return {};
+    return {
+      info: [
+        "姓  名",
+        "手机号码",
+        "培训机构",
+        "领队老师",
+        "创意名称",
+        "合计金额"
+      ],
+      name: ["XX", "XX", "XX", "XX", "XX", "XX"]
+    };
   },
-  methods: {
-    submit() {
-      this.$router.push("/assign");
-    }
+  mounted() {},
+  methods:{
+      submit(){
+          this.$router.push("/assignSuccess")
+      }
   }
 };
 </script>
@@ -70,18 +66,18 @@ li {
 
 #assignSuccess {
   width: 100%;
-  height:100%;
-  overflow-y: auto;
+  height: 100%;
   background: url("../img/assign/assign-bg.png") center no-repeat;
   background-size: 100% 100%;
   padding-bottom: 1rem;
+  overflow-y: auto;
 }
-.top-succ {
+.top-pay {
   width: 100%;
   text-align: center;
   padding-top:1rem;
 }
-.top-succ img {
+.top-pay img {
   width: 19%;
   float: left;
   margin-left: 2.7rem;
@@ -105,13 +101,14 @@ li {
   border-radius: 5%;
   /* padding-bottom:1rem; */
 }
-.form .title {
+.form .title-pay {
   width: 100%;
   font-size: 1.4rem;
   color: white;
   letter-spacing: 2px;
   font-weight: bold;
   padding-top: 0.4rem;
+  padding-bottom: 1.58rem;
 }
 .form .number {
   width: 100%;
@@ -151,7 +148,25 @@ li {
   color: white;
   font-weight: bold;
   background: #660db6;
-  border-radius:0 0 15px 15px;
+}
+.assign-tp{
+    padding-top:0.2rem;
+    margin-bottom:0.4rem;
+    width:100%;
+}
+.assign-tp div{
+    font-size:0.8rem;
+    width:23%;
+    font-weight: bold;
+    display: inline-block;
+    color:white;
+    margin-top:0.2rem;
+    border-right:1px solid white;
+}
+.assign-tp div:last-child{
+    width:25%;
+    display: inline-block;
+    border-right:0px;
 }
 </style>
 

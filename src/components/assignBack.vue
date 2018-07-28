@@ -1,6 +1,22 @@
 <template>
     <div id="assign">
-            <router-view to="/"></router-view>
+        <div class="assign-tp">
+            <div @click="tosign"><span>报名</span></div>
+            <div @click="toBack"><span class="active">回放</span></div>
+            <div @click="toGetsign"><span>投票</span></div>
+            <div @click="toScore"><span>成绩</span></div>
+        </div>
+        <p class="detail-title">精彩回放</p>
+        <div class="detail-box">
+            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
+            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
+            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
+            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
+            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
+            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
+            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
+            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
+        </div>
     </div>
 </template>
 <script>
@@ -62,15 +78,15 @@ export default {
       console.log(file.files);
     }
     var doc = $(".assign-tp div span");
-    for(let i =0;i<doc.length;i++){
-        $(doc[i]).click(()=>{
-            for(var j=0;j<doc.length;j++){
-                if($(doc[j]).hasClass("active")){
-                    $(doc[j]).removeClass("active");
-                }
-            }
-            $(doc[i]).addClass("active");
-        })
+    for (let i = 0; i < doc.length; i++) {
+      $(doc[i]).click(() => {
+        for (var j = 0; j < doc.length; j++) {
+          if ($(doc[j]).hasClass("active")) {
+            $(doc[j]).removeClass("active");
+          }
+        }
+        $(doc[i]).addClass("active");
+      });
     }
   },
   methods: {
@@ -88,6 +104,9 @@ export default {
     },
     toScore(){
       this.$router.push("/assignScore"); 
+    },
+    toDetail(){
+      this.$router.push("/detail"); 
     }
   }
 };
@@ -321,25 +340,68 @@ p[type="submit"] span {
   display: inline-block;
   margin-top: 0.25rem;
 }
+.assign-tp {
+  padding-top: 0.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.assign-tp div {
+  font-size: 0.8rem;
+  width: 23%;
+  font-weight: bold;
+  display: inline-block;
+  color: white;
+  margin-top: 0.2rem;
+  border-right: 1px solid white;
+}
+.assign-tp div:last-child {
+  width: 25%;
+  display: inline-block;
+  border-right: 0px;
+}
+.active {
+  display: inline-block;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid rgb(81, 0, 151);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
 
-.assign-tp div{
-    font-size:0.8rem;
-    width:23%;
-    font-weight: bold;
-    display: inline-block;
-    color:white;
-    margin-top:0.2rem;
-    border-right:1px solid white;
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
 }
-.assign-tp div:last-child{
-    width:25%;
-    display: inline-block;
-    border-right:0px;
+
+#detail {
+  width: 100%;
+  /* height:100vh; */
+  background: url("../img/detail/detail-bg.png") center no-repeat;
+  background-size: 100% 100%;
 }
-.active{
-    display: inline-block;
-    padding-bottom:0.1rem;
-    border-bottom:1px solid rgb(81,0,151);
+.detail-top {
+  width: 100%;
+}
+
+.detail-title {
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  color: white;
+  font-size: 1.1rem;
+  font-family: "微软雅黑";
+}
+.detail-box img {
+  width: 7rem;
+  margin: 0.4rem 0;
+  margin-left: 0.7rem;
+  float: left;
 }
 </style>
 

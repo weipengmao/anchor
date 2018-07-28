@@ -1,6 +1,66 @@
 <template>
     <div id="assign">
-            <router-view to="/"></router-view>
+            <div class="assign-tp">
+                <div @click="tosign"><span class="active">报名</span></div>
+                <div @click="toBack"><span>回放</span></div>
+                <div @click="toGetsign"><span>投票</span></div>
+                <div @click="toScore"><span>成绩</span></div>
+            </div>
+            <!-- 头部三个广告 -->
+            <div class="top-ass clearfix">
+                <img src="../img/assign/assign_01.png" alt="">
+                <img src="../img/assign/assign_02.png" alt="" style="width:27%;margin-left:0;">
+                <img src="../img/assign/assign_03.png" alt="" style="width:20%;margin-left:0;">
+            </div>
+            <!-- 标题 -->
+            <p class="topic">新丝路中国国际少儿模特大赛</p>
+            <!-- 报名填写的表单 -->
+            <div class="form clearfix">
+                <form action="#">
+                    <div class="clearfix">
+                            <div class="left">
+                                <p class="title">报名信息</p>
+                                <p class="input">
+                                    <span>姓名</span>
+                                    <input type="text" placeholder="必填">
+                                </p>
+                                <p class="input">
+                                    <span>年龄</span>
+                                    <input type="text" placeholder="必填">
+                                </p>
+                            </div>
+                        <!--    照片添加    -->
+                        <div class="z_photo">
+                            <div class="z_file">
+                                <input type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                <!-- 监护人等 -->
+                <div class="box clearfix">
+                          <p class="input1 clearfix">
+                            <span>监护人</span>
+                            <input type="text" placeholder="必填">
+                        </p>   
+                          <p class="input1 clearfix">
+                            <span>手机</span>
+                            <input type="text" placeholder="必填">
+                        </p>   
+                          <p class="input1 clearfix">
+                            <span>微信号</span>
+                            <input type="text" placeholder="必填">
+                        </p>   
+                          <p class="input1 clearfix">
+                            <span style="letter-spacing:1px;">所属赛区</span>
+                            <input type="text" placeholder="必填/没有则填无">
+                        </p>   
+                </div>
+                <!-- 马上报名 -->
+                        <p type="submit" @click="submit()"><span>马上报名</span></p>
+                </form>
+            </div>
     </div>
 </template>
 <script>
@@ -60,17 +120,6 @@ export default {
     }
     function subtj() {
       console.log(file.files);
-    }
-    var doc = $(".assign-tp div span");
-    for(let i =0;i<doc.length;i++){
-        $(doc[i]).click(()=>{
-            for(var j=0;j<doc.length;j++){
-                if($(doc[j]).hasClass("active")){
-                    $(doc[j]).removeClass("active");
-                }
-            }
-            $(doc[i]).addClass("active");
-        })
     }
   },
   methods: {
@@ -316,12 +365,17 @@ p[type="submit"] {
   font-size: 1rem;
   color: white;
   font-weight: bold;
+  border-radius:0 0 15px 15px;
 }
 p[type="submit"] span {
   display: inline-block;
   margin-top: 0.25rem;
 }
-
+.assign-tp{
+    padding-top:0.2rem;
+    margin-bottom:1rem !important;
+    width:100%;
+}
 .assign-tp div{
     font-size:0.8rem;
     width:23%;
@@ -335,11 +389,6 @@ p[type="submit"] span {
     width:25%;
     display: inline-block;
     border-right:0px;
-}
-.active{
-    display: inline-block;
-    padding-bottom:0.1rem;
-    border-bottom:1px solid rgb(81,0,151);
 }
 </style>
 

@@ -1,13 +1,29 @@
 <template>
     <div id="assign">
-            <router-view to="/"></router-view>
+        <div class="assign-tp">
+            <div @click="tosign"><span>报名</span></div>
+            <div @click="toBack"><span>回放</span></div>
+            <div @click="toGetsign"><span>投票</span></div>
+            <div @click="toScore"><span  class="active">成绩</span></div>
+        </div>
+        <p class="detail-title">成绩公布</p>
+        <div class="detail-box-score">
+          <p style="width:80%;border-bottom:1px solid #ccc;margin:0 auto;" v-for="item in num">
+            <span style="display:inline-block;padding:0.6rem;width:100%;height:100%;font-size:0.7rem;font-weight:bold;">
+            <span style="display:inline-block;height:100%;text-align:left;">爱笑的猫咪</span>
+            <span style="display:inline-block;height:100%;text-align:right;padding-left:3.3rem;font-size:0.5rem;">2163票</span>
+            </span>
+          </p>
+        </div>
     </div>
 </template>
 <script>
 export default {
   name: "assign",
   data() {
-    return {};
+    return {
+      num:[1,2,3,4,5,6,7,8,9,10]
+    };
   },
   mounted() {
     //多文件上传
@@ -62,15 +78,15 @@ export default {
       console.log(file.files);
     }
     var doc = $(".assign-tp div span");
-    for(let i =0;i<doc.length;i++){
-        $(doc[i]).click(()=>{
-            for(var j=0;j<doc.length;j++){
-                if($(doc[j]).hasClass("active")){
-                    $(doc[j]).removeClass("active");
-                }
-            }
-            $(doc[i]).addClass("active");
-        })
+    for (let i = 0; i < doc.length; i++) {
+      $(doc[i]).click(() => {
+        for (var j = 0; j < doc.length; j++) {
+          if ($(doc[j]).hasClass("active")) {
+            $(doc[j]).removeClass("active");
+          }
+        }
+        $(doc[i]).addClass("active");
+      });
     }
   },
   methods: {
@@ -88,6 +104,9 @@ export default {
     },
     toScore(){
       this.$router.push("/assignScore"); 
+    },
+    toDetail(){
+      this.$router.push("/detail"); 
     }
   }
 };
@@ -114,7 +133,7 @@ li {
 
 #assign {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url("../img/assign/assign-bg.png") center no-repeat;
   background-size: 100% 100%;
   overflow-y: auto;
@@ -321,25 +340,75 @@ p[type="submit"] span {
   display: inline-block;
   margin-top: 0.25rem;
 }
+.assign-tp {
+  padding-top: 0.2rem;
+  margin-bottom: 0.4rem;
+  width: 100%;
+}
+.assign-tp div {
+  font-size: 0.8rem;
+  width: 23%;
+  font-weight: bold;
+  display: inline-block;
+  color: white;
+  margin-top: 0.2rem;
+  border-right: 1px solid white;
+}
+.assign-tp div:last-child {
+  width: 25%;
+  display: inline-block;
+  border-right: 0px;
+}
+.active {
+  display: inline-block;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid rgb(81, 0, 151);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
 
-.assign-tp div{
-    font-size:0.8rem;
-    width:23%;
-    font-weight: bold;
-    display: inline-block;
-    color:white;
-    margin-top:0.2rem;
-    border-right:1px solid white;
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
 }
-.assign-tp div:last-child{
-    width:25%;
-    display: inline-block;
-    border-right:0px;
+
+#detail {
+  width: 100%;
+  /* height:100vh; */
+  background: url("../img/detail/detail-bg.png") center no-repeat;
+  background-size: 100% 100%;
 }
-.active{
-    display: inline-block;
-    padding-bottom:0.1rem;
-    border-bottom:1px solid rgb(81,0,151);
+.detail-top {
+  width: 100%;
+}
+
+.detail-title {
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  color: white;
+  font-size: 1.1rem;
+  font-family: "微软雅黑";
+}
+.detail-box-score img {
+  width: 7rem;
+  margin: 0.4rem 0;
+  margin-left: 0.7rem;
+  float: left;
+}
+.detail-box-score{
+  border:1px solid rgb(81, 0, 151);
+  background: #fff;
+  border-radius:5%;
+  width:90%;
+  margin:0 auto;
 }
 </style>
 

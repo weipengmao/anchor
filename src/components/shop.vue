@@ -15,9 +15,9 @@
                         <span>￥<span :id="'price'+key" style="margin:0;">{{price}}</span>.00</span>
                     </div>
                     <div class="order-content-text">
-                        <p @click ="add(key)" style="text-align:center;border-right:1px solid #ccc;padding-right:0.2rem;">+</p>
-                        <input type="text" v-model="value[key]" style="padding-left:0.3rem;padding-top:0.28rem;" :id="'input'+key">
-                        <p @click ="radiu(key)" style="border-left:1px solid #ccc;padding-left:0.2rem;">-</p>
+                        <span @click ="add(key)" style="border-right:1px solid #ccc;">+</span>
+                        <span :id="'input'+key">1</span>
+                        <span @click ="radiu(key)" style="border-left:1px solid #ccc;">-</span>
                     </div>
                 </div>
             </div>
@@ -41,6 +41,9 @@
 <script>
 export default {
     mounted(){
+        $(".index-bottom").css("width","0");
+        $(".index-bottom img").css("width","0");
+        $(".index-bottom span").css("height","0");
     },
     methods:{
         add(i){
@@ -57,17 +60,17 @@ export default {
             if(valsx =="rgb(255, 0, 0)"){
                 this.allPrice+=this.val;
             }
-            document.querySelector("#input"+i).value = ++this.value[i];
-            document.querySelector("#price"+i).innerHTML = document.querySelector("#input"+i).value*vals;
+            document.querySelector("#input"+i).innerHTML = ++this.value[i];
+            document.querySelector("#price"+i).innerHTML = document.querySelector("#input"+i).innerHTML*vals;
         },
         radiu(i){
             var valsx = $("#check"+i).css("background-color");
-            if(document.querySelector("#input"+i).value>1){
+            if(document.querySelector("#input"+i).innerHTML>1){
                 if(valsx =="rgb(255, 0, 0)"){
                     this.allPrice-=this.val;
                 }
-                document.querySelector("#input"+i).value = --this.value[i];
-                document.querySelector("#price"+i).innerHTML = document.querySelector("#input"+i).value*this.val;
+                document.querySelector("#input"+i).innerHTML = --this.value[i];
+                document.querySelector("#price"+i).innerHTML =document.querySelector("#input"+i).innerHTML*this.val;
             }
         },
         checked(i){
@@ -197,19 +200,17 @@ export default {
     position:absolute;
     bottom:8%;
     right:1.3rem;
-    width:3.8rem;
     border:1px solid #ccc;
     height:1rem;
 }
-.order-content-text p{
+.order-content-text span{
+    line-height: 1rem;
+    font-size:0.7rem;
+    vertical-align: top;
     display: inline-block;
-    margin:0;
-    width:0.5rem;
-    border-radius: 0;
-    color:#ccc;
     height:1rem;
+    padding:0 0.15rem 0 0.15rem;
 }
-input::-webkit-input-placeholder{text-align: center;}
 .checkboxFour {
 	background: #ddd;
 	border-radius: 50%;
@@ -267,9 +268,9 @@ input::-webkit-input-placeholder{text-align: center;}
     left:0;
     position: absolute;
     margin-left:1rem;
-    margin-top:1.1rem;
-    width: 0.5rem;
-	height: 0.5rem;
+    margin-top:1.2rem;
+    width: 0.8rem !important;
+	height: 0.8rem !important;
 	border-radius: 50%;
     display: inline-block;
     float: left;
@@ -279,8 +280,8 @@ input::-webkit-input-placeholder{text-align: center;}
     left:0;
     margin-left:0.8rem;
     margin-top:1.6rem;
-    width: 0.5rem;
-	height: 0.5rem;
+    width: 0.8rem !important;
+	height: 0.8rem !important;
 	border-radius: 50%;
     display: inline-block;
     float: left;

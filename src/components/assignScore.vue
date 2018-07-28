@@ -1,5 +1,22 @@
 <template>
     <div id="assign">
+            <div class="assign-tp">
+                <div @click="tosign"><span>报名</span></div>
+                <div @click="toBack"><span>回放</span></div>
+                <div @click="toGetsign"><span>投票</span></div>
+                <div @click="toScore"><span class="active">成绩</span></div>
+            </div>
+            <div class="assign-img">
+            </div>
+            <div class="assign-content" v-for="(item,key) in num" @click="toScores">
+              <div class="assign-content-top">
+                <p>中国国际少儿模特大赛<span style="font-size:0.45rem;padding-left:1rem;">第{{key+1}}场</span></p>
+                <p style="font-size:0.45rem;padding-top:0.2rem;">投票日期:2018/05/21-2018/05/29</p>
+              </div>
+              <div class="assign-content-bottom">
+                <span>详细成绩</span>
+              </div>
+            </div>
             <router-view to="/"></router-view>
     </div>
 </template>
@@ -7,7 +24,9 @@
 export default {
   name: "assign",
   data() {
-    return {};
+    return {
+      num:[1,2,3]
+    };
   },
   mounted() {
     //多文件上传
@@ -88,6 +107,9 @@ export default {
     },
     toScore(){
       this.$router.push("/assignScore"); 
+    },
+    toScores(){
+      this.$router.push("/assignRank"); 
     }
   }
 };
@@ -321,7 +343,11 @@ p[type="submit"] span {
   display: inline-block;
   margin-top: 0.25rem;
 }
-
+.assign-tp{
+    padding-top:0.2rem;
+    margin-bottom:0.4rem;
+    width:100%;
+}
 .assign-tp div{
     font-size:0.8rem;
     width:23%;
@@ -340,6 +366,47 @@ p[type="submit"] span {
     display: inline-block;
     padding-bottom:0.1rem;
     border-bottom:1px solid rgb(81,0,151);
+}
+.assign-img{
+  height:8.5rem;
+  width:100%;
+  background:url("../img/toTou.jpg") no-repeat;
+  background-size:100% 100%; 
+}
+.assign-content{
+  background: #940dc5;
+  width:15rem;
+  height:4rem;
+  margin:0.5rem;
+}
+.assign-content-bottom{
+  color: #940dc5;
+  width:100%;
+  height:0.8rem;
+  text-align: left;
+  font-size:0.5rem;
+  background: #fff;
+  font-weight: bold;
+}
+.assign-content-bottom{
+  text-align: right;
+  border:1px solid #940dc5;
+}
+.assign-content-bottom span{
+  line-height:0.5rem;
+}
+.assign-content-top p{
+  display: inline-block;
+  text-align: left;
+  font-size:1rem;
+  padding:0.5rem 0 0 0.4rem;
+  width:100%;
+  font-weight: bold;
+  color:#fff;
+}
+.assign-content-top{
+  width:100%;
+  height:3.2rem;
 }
 </style>
 

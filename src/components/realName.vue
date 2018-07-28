@@ -58,7 +58,10 @@
 
             </p> 
         <!-- 提交认证 -->
-        <input type="submit" value="提交认证" class="publish-submit">
+        <div type="submit" value="发布" class="publish-submit">
+            <span style="display:inline-block;padding-top:0.6rem;font-size:1.0rem;">提交认证
+            </span>
+        </div>
     </form>
 
                     <!--遮罩层-->
@@ -242,7 +245,8 @@ li{
             padding:0 0.3rem;
             overflow: auto;
             clear: both;
-           margin: 0.5rem auto;
+            margin: 0.5rem 0.45rem;
+            margin-bottom:2rem;
             border: 1px solid #DF8AFF;
         }
                 .z_photo1 {

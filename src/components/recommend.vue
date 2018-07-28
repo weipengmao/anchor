@@ -13,7 +13,7 @@
         <div class="opt-recommend" :id="'center1'">
             <div class="opt-recommend-content">
                 <div class="opt-content"></div>
-                <div class="clearfix">
+                <div style="margin-top:0.5rem;" class="clearfix">
                     <p style="font-size:0.8rem;float:left;font-weight:700;text-align:left">传承经典</p>
                     <p style="font-size:0.4rem;float:left;text-align:left;margin:0;">普洱茶采集于核心产区——云南西双版纳，普洱有着悠久的茶历史,
             是“茶马古道”的重要驿站。</p>
@@ -211,7 +211,6 @@ export default {
 }
 .opt-recommend{
     flex:1;
-    overflow-y: auto;
 }
 .opt-recommend-content{
     width:100%;
@@ -234,6 +233,7 @@ export default {
     color:rgba(104,29,164,1);
     padding-left:1.5rem !important;
     padding-top:1rem;
+    margin-bottom:4rem;
 }
 .opt-content-eye span{
     float: left;

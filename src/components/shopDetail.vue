@@ -25,8 +25,30 @@
     <div class="shopDetail-img">
         <span style="display:inline-block;padding-top:0.3rem;">图片详情</span>
     </div>
-    <div class="shop-img">
+    <div class="shop-img" style="margin-bottom:3rem;">
         <img src="../img/shopDetail-background.png" alt="">
+    </div>
+    <div class="shop-bottom-detail clearfix">
+        <div class="bottom-left ">
+            <div>
+                <img src="../img/anchor-shopTwo.png" alt="" width="20">
+                <p>客服</p>
+            </div>
+            <div>
+                <img src="../img/anchor-shopOne.png" alt="" width="20">
+                <p>购物车</p>
+            </div>
+            <div>
+                <img src="../img/anchor-shopThree.png" alt="" width="20">
+                <p>首页</p>
+            </div>
+        </div>
+        <div class="bottom-right-detail" @click="toShop">
+            <span>立即购买</span>
+        </div>
+        <div class="bottom-right-detail" @click="toShop" style="background:#ff9800">
+            <span>加入购物车</span>
+        </div>
     </div>
 </div>
 </template>
@@ -62,6 +84,9 @@ export default {
     methods:{
         back(){
             this.$router.push("/optimization")
+        },
+        toShop(){
+            this.$router.push("/shop")
         }
     }
 }
@@ -77,6 +102,25 @@ export default {
     width:100%;
     height:100%;
 }
+.shop-bottom-detail{
+    position:fixed;
+    height:3rem;
+    bottom:0;
+    width:100%;
+    background: #fff;
+}
+.bottom-right-detail{
+    background: red;
+    width:4rem;
+    height:100%;
+    float: right;
+    font-size:0.5rem;
+}
+.bottom-right-detail span{
+    display: inline-block;
+    color:#fff;
+    margin-top:1.1rem;
+}
 .shopDetail-top{
     height:2.5rem;
     width:100%;
@@ -84,6 +128,20 @@ export default {
 .opt-swiper{
     height:9.1rem;
     position:relative;
+}
+.bottom-left{
+    float: left;
+    margin-top:0.7rem;
+    /* margin-left:0.9rem; */
+    font-size:0.5rem;
+}
+.bottom-left div{
+    width:2rem;
+    display: inline-block;
+    margin-left:0.4rem;
+}
+.bottom-left p{
+    margin:0;padding:0;
 }
 #swiper{ height: 9.1rem;position:relative;
   width:100%;}

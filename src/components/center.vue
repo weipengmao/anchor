@@ -99,6 +99,9 @@ export default {
     width:100%;
     height:100%;
 }
+.opt-bottom{
+    margin-bottom:3rem;
+}
 .opt-top-text{
     position:absolute;
     top:50%;
@@ -212,7 +215,7 @@ export default {
     width:7rem;
 }
 .opt-bottom-contents img{
-    width:7rem
+    width:6.5rem
 }
 .opt-recommend{
     flex:1;

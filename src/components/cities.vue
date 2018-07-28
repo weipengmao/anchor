@@ -5,7 +5,7 @@
     <div class="clearfix" style="width:100%">
     <p class="cities-tip clearfix">点击相应目标城市即可进如城市报名页面</p>
     <ul class="cities-box clearfix" >
-        <li v-for="item in items">{{item}}</li>
+        <li v-for="item in items" @click="toAssign">{{item}}</li>
     </ul>
     <p class="cities-warn">赛事组委会享有最终解释权</p>
     </div>
@@ -22,6 +22,11 @@ export default {
         return{
             items:['乌鲁木齐','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州',
             '通州','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州','通州',]
+        }
+    },
+    methods:{
+        toAssign(){
+            this.$router.push("/assign")
         }
     }
 }

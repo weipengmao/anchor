@@ -1,18 +1,13 @@
 <template>
 <div id="detail" class="clearfix">
     <!-- 视屏播放 -->
-    <img src="../img/detail/detail-img1.png" alt="" class="detail-top">
+    <img src="../img/detail/detail-img1.png" alt="" class="detail-top" @click="tovideo">
     <!-- 相关视频 -->
     <p class="detail-title">相关视频</p>
     <div class="detail-box">
-        <img src="../img/detail/detail-img2.png" alt="">
-        <img src="../img/detail/detail-img2.png" alt="">
-        <img src="../img/detail/detail-img2.png" alt="">
-        <img src="../img/detail/detail-img2.png" alt="">
-        <img src="../img/detail/detail-img2.png" alt="">
-        <img src="../img/detail/detail-img2.png" alt="">
-        <img src="../img/detail/detail-img2.png" alt="">
-        <img src="../img/detail/detail-img2.png" alt="">
+        <div v-for="item in num">
+            <img src="../img/detail/detail-img2.png" alt="" @click="tovideo">
+        </div>
     </div>
 </div>
 </template>
@@ -20,7 +15,17 @@
 <script>
 
 export default {
-    name:'detail'
+    name:'detail',
+    data(){
+        return {
+            num:[1,2,3,4,5,6,7,8]
+        }
+    },
+    methods:{
+        tovideo(){
+            this.$router.push("/video")
+        }
+    }
 }
 </script>
 

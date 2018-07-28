@@ -16,7 +16,31 @@
     <img src="../img/arrangement/arrangement-img2.jpg" alt="" @click="toCities()">
     <img src="../img/arrangement/arrangement-img3.png" alt="" @click="toCities()">
     </div>
-
+    <div class="index-bottom">
+        <div>
+            <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
+            <span style="display:inline-block;border-right:1px solid #fff;
+            height:1.6rem;margin-left:0.08rem;"></span>
+        </div>
+        <div>
+            <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
+            <span style="display:inline-block;border-right:1px solid #fff;
+            height:1.6rem;margin-left:0.08rem;"></span>
+        </div>
+        <div>
+            <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
+            <span style="display:inline-block;border-right:1px solid #fff;
+            height:1.6rem;margin-left:0.08rem;"></span>
+        </div>
+        <div>
+            <img src="../img/index/index-mall.png" alt="" @click="toMall()">
+            <span style="display:inline-block;border-right:1px solid #fff;
+            height:1.6rem;margin-left:0.08rem;"></span>
+        </div>
+        <div style="border-right:0;">
+            <img src="../img/index/index-personal.png" alt="" @click="toAccount()" >
+        </div>
+    </div>
     
 
 </div>
@@ -68,6 +92,21 @@ export default {
     methods:{
       toCities(){
         this.$router.push('/cities')
+      },
+      toHome(){
+          this.$router.push('/index')
+      },
+      toAssign(){
+          this.$router.push('/arrangement')
+      },
+      toDiscover(){
+          this.$router.push('/discover')
+      },
+      toMall(){
+          this.$router.push('/optimization')
+      },
+      toAccount(){
+          this.$router.push('/login')
       }
     }
 }
@@ -127,5 +166,31 @@ a{
     width:100%;
     margin-top:3px;
     float:left;
+}
+    /* 底部导航 */
+.index-bottom{
+    width:100%;
+    height:3rem;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background:#AD0EFF;
+display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+display: -ms-flexbox; /* TWEENER - IE 10 */
+display: -webkit-flex; /* NEW - Chrome */
+display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+justify-content: center;
+align-items: center;
+flex-direction: row;
+}
+.index-bottom img{
+    vertical-align: bottom;
+    width:54px;
+    /* border-right:1px solid #fff; */
+    display:inline-block;
+}
+.index-bottom div{
+    width:20%;
 }
 </style>

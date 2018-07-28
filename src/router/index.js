@@ -18,7 +18,8 @@ import announcement from '@/components/announcement'
 import realName from '@/components/realName'
 import assign from '@/components/assign'
 import assignSuccess from '@/components/assignSuccess'
-import payInfor from '@/components/payInfor'
+import assignPay from '@/components/assignPay'
+
 
 import register from '@/components/register'
 import info from '@/components/info'
@@ -32,6 +33,14 @@ import optIndex from '@/components/optIndex'
 import center from '@/components/center'
 import shopDetail from '@/components/shopDetail'
 import disc from '@/components/disc'
+import assignIndex from '@/components/assignIndex'
+import assignBack from '@/components/assignBack'
+import assignTou from '@/components/assignTou'
+import assignScore from '@/components/assignScore'
+import assignRank from '@/components/assignRank'
+import Moka from '@/components/Moka'
+import tongGao from '@/components/tongGao'
+import video from '@/components/video'
 
 Vue.use(Router)
 
@@ -76,6 +85,21 @@ export default new Router({
           path: '/disc',
           name: 'disc',
           component: disc
+        },
+        {
+          path:'/Moka',
+          name:'Moka',
+          component:Moka
+        },
+        {
+          path:'/tongGao',
+          name:'tongGao',
+          component:tongGao
+        },
+        {
+          path:'/',
+          name:'tongGao',
+          component:tongGao
         }
       ]
     },
@@ -88,6 +112,21 @@ export default new Router({
       path: '/popularity',
       name: 'popularity',
       component: popularity
+    },
+    {
+      path: '/assignTou',
+      name: 'assignTou',
+      component: assignTou
+    },
+    {
+      path: '/assignScore',
+      name: 'assignScore',
+      component: assignScore
+    },
+    {
+      path: '/assignRank',
+      name: 'assignRank',
+      component: assignRank
     },
     {
       path: '/liveRadio',
@@ -118,6 +157,21 @@ export default new Router({
       path: '/shopDetail',
       name: 'shopDetail',
       component: shopDetail
+    },
+    {
+      path: '/assignPay',
+      name: 'assignPay',
+      component: assignPay
+    },
+    {
+      path: '/assignBack',
+      name: 'assignBack',
+      component: assignBack
+    },
+    {
+      path: '/video',
+      name: 'video',
+      component: video
     },
     {
       path: '/optimization',
@@ -191,17 +245,19 @@ export default new Router({
     {
       path: '/assign',
       name: 'assign',
-      component: assign
+      component: assign,
+      children:[
+        {
+          path: '/',
+          name: 'assignIndex',
+          component: assignIndex,
+        }
+      ]
     },
     {
       path: '/assignSuccess',
       name: 'assignSuccess',
       component: assignSuccess
-    },
-    {
-      path: '/payInfor',
-      name: 'payInfor',
-      component: payInfor
     }
   ]
 })
