@@ -3,39 +3,35 @@
             <div class="assign-content" v-for="(item,key) in num" @click="toTou">
               <div class="assign-content-top">
                 <p>中国国际少儿模特大赛</p>
-                <p style="font-size:0.45rem;padding-top:0.2rem;font-weight:normal;"> 广东广州<span style="font-size:0.45rem;padding-left:4rem;">剩余30天截至报名</span></p>
+                <p class="area" > 广东广州<span class="remainDay" >剩余30天截至报名</span></p>
               </div>
               <div class="assign-content-bottom">
-                <p>已经有xx人报名<span style="font-size:0.6rem;padding-left:9rem;">报名</span></p>
+                <p>已经有xx人报名<span class="toAssign" >报名</span></p>
               </div>
             </div>
-            <div style="height:3rem;width:100%;"></div>
-                <!-- 底部导航 -->
-          <div class="index-bottom">
-              <div>
-                  <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
-                  <span style="display:inline-block;border-right:1px solid #fff;
-                  height:1.6rem;margin-left:0.08rem;"></span>
-              </div>
-              <div>
-                  <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
-                  <span style="display:inline-block;border-right:1px solid #fff;
-                  height:1.6rem;margin-left:0.08rem;"></span>
-              </div>
-              <div>
-                  <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
-                  <span style="display:inline-block;border-right:1px solid #fff;
-                  height:1.6rem;margin-left:0.08rem;"></span>
-              </div>
-              <div>
-                  <img src="../img/index/index-mall.png" alt="" @click="toMall()">
-                  <span style="display:inline-block;border-right:1px solid #fff;
-                  height:1.6rem;margin-left:0.08rem;"></span>
-              </div>
-              <div style="border-right:0;">
-                  <img src="../img/index/index-personal.png" alt="" @click="toAccount()" >
-              </div>
-          </div>
+            <div class="assigns-box" ></div>
+    <!-- 底部导航 -->
+    <div class="index-bottom">
+        <div>
+            <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
+            <span class="index-nav" ></span>
+        </div>
+        <div>
+            <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
+            <span class="index-nav" ></span>
+        </div>
+        <div>
+            <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
+            <span class="index-nav" ></span>
+        </div>
+        <div>
+            <img src="../img/index/index-mall.png" alt="" @click="toMall()">
+            <span class="index-nav" ></span>
+        </div>
+        <div style="border-right:0;">
+            <img src="../img/index/index-personal.png" alt="" @click="toAccount()" >
+        </div>
+    </div>
     </div>
 </template>
 <script>
@@ -386,5 +382,27 @@ p[type="submit"] span {
   color:#fff;
 }
 
+
+
+
+.index-nav{
+display:inline-block;border-right:1px solid #fff;
+            height:1.6rem;margin-left:0.08rem;
+}
+
+.area{
+font-size:0.45rem;padding-top:0.2rem;font-weight:normal;
+}
+.remainDay{
+font-size:0.45rem;padding-left:4rem;
+}
+
+.toAssign{
+font-size:0.6rem;padding-left:8rem;
+}
+
+.assigns-box{
+height:3rem;width:100%;
+}
 </style>
 

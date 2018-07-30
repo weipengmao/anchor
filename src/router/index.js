@@ -184,7 +184,7 @@ export default new Router({
           component: optIndex,
           children:[
             {
-              path: '/',
+              path: '/center',
               name: 'center',
               component: center,
             }

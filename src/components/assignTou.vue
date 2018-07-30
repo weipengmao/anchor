@@ -1,19 +1,19 @@
 <template>
-    <div id="assign">
-            <div class="assign-tp">
+    <div id="assignTou">
+            <div class="assignTou-tp">
                 <div @click="tosign"><span>报名</span></div>
                 <div @click="toBack"><span>回放</span></div>
-                <div @click="toGetsign"><span class="active">投票</span></div>
+                <div @click="toGetsign"><span class="assignTou-active">投票</span></div>
                 <div @click="toScore"><span>成绩</span></div>
             </div>
-            <div class="assign-img">
+            <div class="assignTou-img">
             </div>
-            <div class="assign-content" v-for="(item,key) in num" @click="toTou">
-              <div class="assign-content-top">
-                <p>中国国际少儿模特大赛<span style="font-size:0.45rem;padding-left:1rem;">第{{key+1}}场</span></p>
-                <p style="font-size:0.45rem;padding-top:0.2rem;">投票日期:2018/05/21-2018/05/29</p>
+            <div class="assignTou-content" v-for="(item,key) in num" @click="toTou">
+              <div class="assignTou-content-top">
+                <p>中国国际少儿模特大赛<span class="inspan" >第{{key+1}}场</span></p>
+                <p class="assignTou-time" >投票日期:2018/05/21-2018/05/29</p>
               </div>
-              <div class="assign-content-bottom">
+              <div class="assignTou-content-bottom">
                 <span>详细成绩</span>
               </div>
             </div>
@@ -22,7 +22,7 @@
 </template>
 <script>
 export default {
-  name: "assign",
+  name: "assignTou",
   data() {
     return {
       num:[1,2,3]
@@ -134,7 +134,7 @@ li {
   display: block;
 }
 
-#assign {
+#assignTou {
   width: 100%;
   height: 100vh;
   background: url("../img/assign/assign-bg.png") center no-repeat;
@@ -343,12 +343,12 @@ p[type="submit"] span {
   display: inline-block;
   margin-top: 0.25rem;
 }
-.assign-tp{
+.assignTou-tp{
     padding-top:0.2rem;
     margin-bottom:0.4rem;
     width:100%;
 }
-.assign-tp div{
+.assignTou-tp div{
     font-size:0.8rem;
     width:23%;
     font-weight: bold;
@@ -357,29 +357,29 @@ p[type="submit"] span {
     margin-top:0.2rem;
     border-right:1px solid white;
 }
-.assign-tp div:last-child{
+.assignTou-tp div:last-child{
     width:25%;
     display: inline-block;
     border-right:0px;
 }
-.active{
+.assignTou-active{
     display: inline-block;
     padding-bottom:0.1rem;
     border-bottom:1px solid rgb(81,0,151);
 }
-.assign-img{
+.assignTou-img{
   height:8.5rem;
   width:100%;
   background:url("../img/toTou.jpg") no-repeat;
   background-size:100% 100%; 
 }
-.assign-content{
+.assignTou-content{
   background: #940dc5;
   width:15rem;
   height:4rem;
   margin:0.5rem;
 }
-.assign-content-bottom{
+.assignTou-content-bottom{
   color: #940dc5;
   width:100%;
   height:0.8rem;
@@ -388,14 +388,14 @@ p[type="submit"] span {
   background: #fff;
   font-weight: bold;
 }
-.assign-content-bottom{
+.assignTou-content-bottom{
   text-align: right;
   border:1px solid #940dc5;
 }
-.assign-content-bottom span{
+.assignTou-content-bottom span{
   line-height:0.5rem;
 }
-.assign-content-top p{
+.assignTou-content-top p{
   display: inline-block;
   text-align: left;
   font-size:1rem;
@@ -404,9 +404,18 @@ p[type="submit"] span {
   font-weight: bold;
   color:#fff;
 }
-.assign-content-top{
+.assignTou-content-top{
   width:100%;
   height:3.2rem;
+}
+
+
+.assignTou-content-top .inspan{
+font-size:0.45rem;padding-left:1rem;
+}
+
+.assignTou-time {
+font-size:0.45rem !important;padding-top:0.2rem;
 }
 </style>
 

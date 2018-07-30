@@ -1,7 +1,7 @@
 <template>
 <div id="disc">
     <!-- 比赛 -->
-    <div class="clearfix" style="margin-bottom:1rem;" >
+    <div class="clearfix disc-box"  >
     <div class="discover-box clearfix">
         <div class="discover-left">
         <img src="../img/discover/discover-img3.png" alt="">
@@ -194,5 +194,9 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.disc-box{
+margin-bottom:1rem;
 }
 </style>

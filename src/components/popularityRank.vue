@@ -15,11 +15,11 @@
     <div class="popAccumulate">
         <div class="pop-left">
             <p>参赛选手</p>
-            <p style="font-weight:bold;font-size:0.9rem;color:#fff;">100</p>
+            <p class="popPeople" >100</p>
         </div>
         <div class="pop-right">
              <p>累计人气</p>
-            <p style="font-weight:bold;font-size:0.9rem;color:#fff;">12312300</p>           
+            <p class="popLike" style="">12312300</p>           
         </div>
     </div>
     <!-- 参赛选手 -->
@@ -29,7 +29,7 @@
             <div class="bottom">
                 <p class="name">花轮同学</p>
                 <p  class="num">
-                  <span style="color:#98D1D8">111223</span>
+                  <span >111223</span>
                     人气</p >
             </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="bottom">
                 <p class="name">花轮同学</p>
                 <p  class="num">
-                  <span style="color:#98D1D8">111223</span>
+                  <span >111223</span>
                     人气</p >
             </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="bottom">
                 <p class="name">花轮同学</p>
                 <p  class="num">
-                  <span style="color:#98D1D8">111223</span>
+                  <span >111223</span>
                     人气</p >
             </div>
         </div>
@@ -59,7 +59,7 @@
             <div class="bottom">
                 <p class="name">花轮同学</p>
                 <p  class="num">
-                  <span style="color:#98D1D8">111223</span>
+                  <span >111223</span>
                     人气</p >
             </div>
         </div>
@@ -118,8 +118,8 @@ li{
 .popularity-top{
     width:100%;
     height:3rem;
-    padding-top:1rem;
-    margin-bottom: 0.5rem;
+    /* padding-top:1rem; */
+    /* margin-bottom: 0.5rem; */
 }
 .popularity-top img{
     width:2rem;
@@ -183,5 +183,17 @@ li{
         /* width:3.5rem; */
     /* display:inline-block; */
     font-size:0.3rem;
+}
+
+.popPeople{
+font-weight:bold;font-size:0.9rem;color:#fff;
+}
+
+.popLike{
+    font-weight:bold;font-size:0.9rem;color:#fff;
+}
+
+.num span{
+color:#98D1D8
 }
 </style>

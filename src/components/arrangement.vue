@@ -16,26 +16,22 @@
     <img src="../img/arrangement/arrangement-img2.jpg" alt="" @click="toCities()">
     <img src="../img/arrangement/arrangement-img3.png" alt="" @click="toCities()">
     </div>
-    <div class="index-bottom">
+    <div class="arrangement-bottom">
         <div>
             <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
-            <span style="display:inline-block;border-right:1px solid #fff;
-            height:1.6rem;margin-left:0.08rem;"></span>
+            <span class="arrangement-button"></span>
         </div>
         <div>
             <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
-            <span style="display:inline-block;border-right:1px solid #fff;
-            height:1.6rem;margin-left:0.08rem;"></span>
+            <span class="arrangement-button"></span>
         </div>
         <div>
             <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
-            <span style="display:inline-block;border-right:1px solid #fff;
-            height:1.6rem;margin-left:0.08rem;"></span>
+            <span class="arrangement-button"></span>
         </div>
         <div>
             <img src="../img/index/index-mall.png" alt="" @click="toMall()">
-            <span style="display:inline-block;border-right:1px solid #fff;
-            height:1.6rem;margin-left:0.08rem;"></span>
+            <span class="arrangement-button"></span>
         </div>
         <div style="border-right:0;">
             <img src="../img/index/index-personal.png" alt="" @click="toAccount()" >
@@ -168,7 +164,7 @@ a{
     float:left;
 }
     /* 底部导航 */
-.index-bottom{
+.arrangement-bottom{
     width:100%;
     height:3rem;
     position:fixed;
@@ -184,13 +180,18 @@ justify-content: center;
 align-items: center;
 flex-direction: row;
 }
-.index-bottom img{
+.arrangement-bottom img{
     vertical-align: bottom;
     width:54px;
     /* border-right:1px solid #fff; */
     display:inline-block;
 }
-.index-bottom div{
+.arrangement-bottom div{
     width:20%;
+}
+
+.arrangement-bottom .arrangement-button{
+    display:inline-block;border-right:1px solid #fff;
+            height:1.6rem;margin-left:0.08rem;
 }
 </style>

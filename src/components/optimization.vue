@@ -11,31 +11,27 @@
         </div>
         <router-view to="/"></router-view>
     <!-- 底部导航 -->
-        <div class="index-bottom">
-            <div>
-                <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
-                <span style="display:inline-block;border-right:1px solid #fff;
-                height:1.6rem;margin-left:0.08rem;"></span>
-            </div>
-            <div>
-                <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
-                <span style="display:inline-block;border-right:1px solid #fff;
-                height:1.6rem;margin-left:0.08rem;"></span>
-            </div>
-            <div>
-                <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
-                <span style="display:inline-block;border-right:1px solid #fff;
-                height:1.6rem;margin-left:0.08rem;"></span>
-            </div>
-            <div>
-                <img src="../img/index/index-mall.png" alt="" @click="toMall()">
-                <span style="display:inline-block;border-right:1px solid #fff;
-                height:1.6rem;margin-left:0.08rem;"></span>
-            </div>
-            <div style="border-right:0;">
-                <img src="../img/index/index-personal.png" alt="" @click="toAccount()" >
-            </div>
+    <div class="index-bottom">
+        <div>
+            <img src="../img/index/index-first.png" alt="" style="border-left:none;" @click="toHome()">
+            <span class="index-nav" ></span>
         </div>
+        <div>
+            <img src="../img/index/index-assign.png" alt="" @click="toAssign()">
+            <span class="index-nav" ></span>
+        </div>
+        <div>
+            <img src="../img/index/index-discover.png" alt="" @click="toDiscover()">
+            <span class="index-nav" ></span>
+        </div>
+        <div>
+            <img src="../img/index/index-mall.png" alt="" @click="toMall()">
+            <span class="index-nav" ></span>
+        </div>
+        <div style="border-right:0;">
+            <img src="../img/index/index-personal.png" alt="" @click="toAccount()" >
+        </div>
+    </div>
     </div>
 </template>
 
@@ -173,5 +169,11 @@ flex-direction: row;
 }
 .index-bottom div{
     width:20%;
+}
+
+
+.index-nav{
+display:inline-block;border-right:1px solid #fff;
+            height:1.6rem;margin-left:0.08rem;
 }
 </style>

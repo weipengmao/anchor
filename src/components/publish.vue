@@ -28,7 +28,7 @@
         <input type="text" placeholder="*联系方式">
         <!-- 提交审核 -->
         <div type="submit" value="发布" class="publish-submit">
-            <span style="display:inline-block;padding-top:0.6rem;font-size:1.0rem;">提交审核
+            <span class="toSubmit" >提交审核
             </span>
         </div>
     </form>
@@ -297,5 +297,9 @@ li{
             color:white;
             letter-spacing: 2px;
             font-size: 0.8rem;
+        }
+
+        .toSubmit{
+display:inline-block;padding-top:0.6rem;font-size:1.0rem;
         }
 </style>

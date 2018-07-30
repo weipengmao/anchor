@@ -15,9 +15,9 @@
                         <span>￥<span :id="'price'+key" style="margin:0;">{{price}}</span>.00</span>
                     </div>
                     <div class="order-content-text">
-                        <span @click ="add(key)" style="border-right:1px solid #ccc;">+</span>
+                        <span @click ="add(key)" class="toAdd" >+</span>
                         <span :id="'input'+key">1</span>
-                        <span @click ="radiu(key)" style="border-left:1px solid #ccc;">-</span>
+                        <span @click ="radiu(key)" class="toMin" >-</span>
                     </div>
                 </div>
             </div>
@@ -26,9 +26,9 @@
             <div class="bottom-left ">
                 <div style="position:relative;">
                     <span id="check" class="checkboxFoury" @click="checkedall()"></span>
-                    <span style="font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:2.5rem">全选</span>
-                    <span style="color:#ccc;font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:1rem">合计：
-                    <span style="color:black;font-size:0.6rem;">￥<span>{{allPrice}}</span>.00</span></span>
+                    <span class="bottom-all">全选</span>
+                    <span class="bottom-sum" >合计：
+                    <span class="bottom-money" >￥<span>{{allPrice}}</span>.00</span></span>
                 </div>
             </div>
             <div class="bottom-right">
@@ -286,5 +286,24 @@ export default {
     display: inline-block;
     float: left;
     border:5px solid #ddd;
+}
+
+.bottom-all{
+font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:2.5rem
+}
+
+.bottom-sum{
+color:#ccc;font-size:0.6rem;float:left;margin-top:1.2rem;margin-left:1rem
+}
+.bottom-money{
+color:black;font-size:0.6rem;
+}
+
+.toAdd{
+border-right:1px solid #ccc;
+}
+
+.toMin{
+border-left:1px solid #ccc;
 }
 </style>

@@ -1,13 +1,12 @@
 <template>
-<div class="clearfix" id="MokaDetail">
+<div class="clearfix" id="Moka">
     <!-- 详情 -->
     <div class="MokaDetail-box clearfix" v-for="item in num" @click="toDetail">
         <div class="clearfix">
             <p class="MokaDetail-img"></p>
             <p class="MokaDetail-title">xxx</p>
         </div>
-        <div class="moka" style="height:4.91rem;width:13.2rem;
-        background-size:100% 100%;margin-top:0.3rem;"></div>
+        <div class="moka"></div>
     </div>
 </div>
 </template>
@@ -16,7 +15,7 @@
 
 
 export default {
-    name:'MokaDetail',
+    name:'Moka',
     data(){
         return{
             num:[1,2]
@@ -38,7 +37,9 @@ export default {
     margin:0;padding:0;box-sizing: border-box;
 }
 .moka{
-    background: url("../img/moka.png")
+    background: url("../img/moka.png");
+    height:4.91rem;width:13.2rem;
+        background-size:100% 100%;margin-top:0.3rem;
 }
 a{
     text-decoration: none;
@@ -49,7 +50,7 @@ li{
 .clearfix:after{
     content:'';clear:both;display:block;
 }
-#MokaDetail{
+#Moka{
     width:100%;
     background: #fff;
 }

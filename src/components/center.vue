@@ -1,10 +1,10 @@
 <template>
-    <div class="opt-container">
+    <div id="center" class="opt-container">
         <div class="opt-center" :id="'center0'">
             <div class="opt-firstContent">
                 <div class="opt-firstConten-top clearfix">
-                    <span style="float:left;font-size:0.875rem;font-weight:700;">热门商品</span>
-                    <span style="float:right;font-size:0.5rem;font-weight:700;margin-top:0.45rem;">查看更多</span>
+                    <span class="opt-goods1" >热门商品</span>
+                    <span  class="opt-goods2" >查看更多</span>
                 </div>
                 <div class="opt-firstConten-bottom">
                     <div class="opt-bottom-div">
@@ -33,6 +33,7 @@
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 export default {
+    name:' e',
     mounted(){
         var width = this.contents.length*6.2;
         $(".opt-bottom-div").css("width",width+"rem");
@@ -263,5 +264,14 @@ export default {
 }
 .active{
     border-bottom: 1px solid #fff;
+}
+
+
+.opt-goods1{
+float:left;font-size:0.875rem;font-weight:700;
+}
+
+.opt-goods2{
+    float:right;font-size:0.5rem;font-weight:700;margin-top:0.45rem;
 }
 </style>

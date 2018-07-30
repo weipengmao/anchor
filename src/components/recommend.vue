@@ -13,11 +13,11 @@
         <div class="opt-recommend" :id="'center1'">
             <div class="opt-recommend-content">
                 <div class="opt-content"></div>
-                <div style="margin-top:0.5rem;" class="clearfix">
-                    <p style="font-size:0.8rem;float:left;font-weight:700;text-align:left">传承经典</p>
-                    <p style="font-size:0.4rem;float:left;text-align:left;margin:0;">普洱茶采集于核心产区——云南西双版纳，普洱有着悠久的茶历史,
+                <div  class="clearfix opt-inbox">
+                    <p class="opt-p1" >传承经典</p>
+                    <p class="opt-p2" >普洱茶采集于核心产区——云南西双版纳，普洱有着悠久的茶历史,
             是“茶马古道”的重要驿站。</p>
-                    <p style="font-size:0.4rem;float:left;text-align:left;">小青柑采摘自核心产区——广东新会，新会青柑大小适中颗粒饱满,
+                    <p class="opt-p3" >小青柑采摘自核心产区——广东新会，新会青柑大小适中颗粒饱满,
             表皮油包明显，芳香浓郁，久泡余香，回甘持久</p>
                 </div>
                 <div class="opt-content-eye clearfix">
@@ -255,5 +255,20 @@ export default {
 }
 .active{
     border-bottom: 1px solid #fff;
+}
+
+
+.opt-inbox{
+margin-top:0.5rem;
+}
+
+.opt-p1{
+    font-size:0.8rem;float:left;font-weight:700;text-align:left
+}
+.opt-p2{
+font-size:0.4rem;float:left;text-align:left;margin:0;
+}
+.opt-p3{
+font-size:0.4rem;float:left;text-align:left;
 }
 </style>

@@ -22,7 +22,7 @@
 
         <!-- 提交审核 -->
         <div type="submit" value="发布" class="publish-submit">
-            <span style="display:inline-block;padding-top:0.6rem;font-size:1.0rem;">发布
+            <span class="toSubmit" >发布
             </span>
         </div>
     </form>
@@ -292,5 +292,9 @@ li {
   position: fixed;
   bottom: 0;
   left: 0;
+}
+
+.toSubmit{
+display:inline-block;padding-top:0.6rem;font-size:1.0rem;
 }
 </style>

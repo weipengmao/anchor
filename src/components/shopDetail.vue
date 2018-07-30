@@ -1,8 +1,8 @@
 <template>
 <div class="shopDetail">
     <div class="shopDetail-top clearfix">
-        <img style="float:left;margin-top:0.45rem;margin-left:1.45rem;" src="../img/detailShop-back.jpg" alt="" @touchend="back()">
-        <span style="float:left;font-size:0.9rem;margin-top:0.45rem;margin-left:1rem;">商品详情</span>
+        <img  src="../img/detailShop-back.jpg" alt="" @touchend="back()">
+        <span >商品详情</span>
     </div>
     <div class="opt-swiper">
         <swiper  :options="swiperOption" ref="mySwiper">
@@ -19,11 +19,10 @@
         <p>小青柑普茶</p>
     </div>
     <div class="shopDetail-price"><p>￥<span>399</span>.00</p></div>
-    <div class="shopDetail-info" ><p style="font-size:1rem;margin-top:2rem;">商品信息</p><p style="text-align:left;
-    font-size:0.6rem;margin-left:1.5rem;"
-     v-for="item in series"><span style="color:rgb(159,159,159);">{{item}}：</span>小青柑普茶</p></div>
+    <div class="shopDetail-info" ><p class="p1">商品信息</p><p class="p2"
+     v-for="item in series"><span class="sp1" >{{item}}：</span>小青柑普茶</p></div>
     <div class="shopDetail-img">
-        <span style="display:inline-block;padding-top:0.3rem;">图片详情</span>
+        <span class="shopDetail-span" >图片详情</span>
     </div>
     <div class="shop-img" style="margin-bottom:3rem;">
         <img src="../img/shopDetail-background.png" alt="">
@@ -206,5 +205,32 @@ export default {
 }
 .shop-img img{
     width:100%;
+}
+
+
+
+.shopDetail-top img{
+float:left;margin-top:0.45rem;margin-left:1.45rem;
+}
+
+.shopDetail-top span{
+    float:left;font-size:0.9rem;margin-top:0.45rem;margin-left:1rem;
+}
+
+.shopDetail-info .p1{
+font-size:1rem;margin-top:2rem;
+}
+
+.shopDetail-info .p2{
+text-align:left;
+    font-size:0.6rem;margin-left:1.5rem;
+}
+
+.shopDetail-info .p2 .sp1{
+color:rgb(159,159,159);
+}
+
+.shopDetail-span{
+display:inline-block;padding-top:0.3rem;
 }
 </style>

@@ -23,7 +23,7 @@
                     </div>
                     <div class="order-content-right">
                         <span>￥{{price}}.00</span>
-                        <p style="color:red;border:1px solid red;">待付款</p>
+                        <p class="button1" style="">待付款</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="order-content-right">
                         <span>￥{{price}}.00</span>
-                        <p style="color:#a7a4a4;border:1px solid #a7a4a4;">查看物流</p>
+                        <p class="button2" >查看物流</p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="order-content-right">
                         <span>￥{{price}}.00</span>
-                        <p style="color:yellow;border:1px solid yellow;">确认收货</p>
+                        <p class="button3" >确认收货</p>
                     </div>
                 </div>
             </div>
@@ -68,21 +68,18 @@
                     </div>
                     <div class="order-content-right">
                         <span>￥{{price}}.00</span>
-                        <p style="color:red;border:1px solid red;">待评价</p>
+                        <p class="button4" >待评价</p>
                     </div>
-                    <div class="block" style="display:inline-block;padding-top:0.2rem;width:100%;
-                    text-align:right;">
-                        <span style="float:left;padding-left:0.6rem;font-size:0.9rem;">商品评分</span>
+                    <div class="block" >
+                        <span >商品评分</span>
                        <el-rate v-model="value1" style="width:85%"></el-rate>
                     </div>
-                    <div class="block" style="display:inline-block;padding-top:0.2rem;width:100%;
-                    text-align:right;">
-                        <span style="float:left;padding-left:0.6rem;font-size:0.9rem;">物流评分</span>
+                    <div class="block" >
+                        <span >物流评分</span>
                        <el-rate v-model="value2" style="width:85%"></el-rate>
                     </div>
-                    <div class="block" style="display:inline-block;padding-top:0.2rem;width:100%;
-                    text-align:right;">
-                        <span style="float:left;padding-left:0.6rem;font-size:0.9rem;">客服评分</span>
+                    <div class="block" >
+                        <span >客服评分</span>
                        <el-rate v-model="value3" style="width:85%"></el-rate>
                     </div>
                 </div>
@@ -98,7 +95,7 @@
                     </div>
                     <div class="order-content-right">
                         <span>￥{{price}}.00</span>
-                        <p style="color:red;border:1px solid red;border-radius:0;">申请售后</p>
+                        <p class="button5" style="">申请售后</p>
                     </div>
                 </div>
             </div>
@@ -254,4 +251,29 @@ export default {
     border-radius: 0.5rem;
 }
 
+.order-content-right .button1{
+color:red;border:1px solid red;
+}
+
+.order-content-right .button2{
+    color:#a7a4a4;border:1px solid #a7a4a4;
+}
+.order-content-right .button3{
+    color:yellow;border:1px solid yellow;
+}
+.order-content-right .button4{
+    color:red;border:1px solid red;
+}
+
+.order-content-right .button5{
+    color:red;border:1px solid red;border-radius:0;
+}
+.block{
+    display:inline-block;padding-top:0.2rem;width:100%;
+                    text-align:right;
+}
+
+.block span{
+float:left;padding-left:0.6rem;font-size:0.9rem;
+}
 </style>

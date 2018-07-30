@@ -1,5 +1,5 @@
 <template>
-    <div id="assign">
+    <div id="assignIndex">
             <div class="assign-tp">
                 <div @click="tosign"><span class="active">报名</span></div>
                 <div @click="toBack"><span>回放</span></div>
@@ -65,7 +65,7 @@
 </template>
 <script>
 export default {
-  name: "assign",
+  name: "assignIndex",
   data() {
     return {};
   },

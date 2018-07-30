@@ -1,13 +1,13 @@
 <template>
-    <div id="assign">
-        <div class="assign-tp">
+    <div id="assignBack">
+        <div class="assignBack-tp">
             <div @click="tosign"><span>报名</span></div>
-            <div @click="toBack"><span class="active">回放</span></div>
+            <div @click="toBack"><span class="assignBack-active">回放</span></div>
             <div @click="toGetsign"><span>投票</span></div>
             <div @click="toScore"><span>成绩</span></div>
         </div>
-        <p class="detail-title">精彩回放</p>
-        <div class="detail-box">
+        <p class="assignBack-title">精彩回放</p>
+        <div class="assignBack-box">
             <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
             <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
             <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
@@ -21,7 +21,7 @@
 </template>
 <script>
 export default {
-  name: "assign",
+  name: "assignBack",
   data() {
     return {};
   },
@@ -81,11 +81,11 @@ export default {
     for (let i = 0; i < doc.length; i++) {
       $(doc[i]).click(() => {
         for (var j = 0; j < doc.length; j++) {
-          if ($(doc[j]).hasClass("active")) {
-            $(doc[j]).removeClass("active");
+          if ($(doc[j]).hasClass("assignBack-active")) {
+            $(doc[j]).removeClass("assignBack-active");
           }
         }
-        $(doc[i]).addClass("active");
+        $(doc[i]).addClass("assignBack-active");
       });
     }
   },
@@ -131,7 +131,7 @@ li {
   display: block;
 }
 
-#assign {
+#assignBack {
   width: 100%;
   height: 100%;
   background: url("../img/assign/assign-bg.png") center no-repeat;
@@ -340,12 +340,12 @@ p[type="submit"] span {
   display: inline-block;
   margin-top: 0.25rem;
 }
-.assign-tp {
+.assignBack-tp {
   padding-top: 0.2rem;
   margin-bottom: 1rem;
   width: 100%;
 }
-.assign-tp div {
+.assignBack-tp div {
   font-size: 0.8rem;
   width: 23%;
   font-weight: bold;
@@ -354,12 +354,12 @@ p[type="submit"] span {
   margin-top: 0.2rem;
   border-right: 1px solid white;
 }
-.assign-tp div:last-child {
+.assignBack-tp div:last-child {
   width: 25%;
   display: inline-block;
   border-right: 0px;
 }
-.active {
+.assignBack-active {
   display: inline-block;
   padding-bottom: 0.1rem;
   border-bottom: 1px solid rgb(81, 0, 151);

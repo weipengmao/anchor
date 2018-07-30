@@ -14,9 +14,9 @@
                 <p class="title-pay">报名信息</p>
                 <!-- 您的参赛信息 -->
                 <p v-for="info in info"  class="number">
-                    <span style="display:inline-block;margin-right:1.5rem;margin-left:1.5rem;width:3rem;text-align:left;">{{info}}</span><span v-for="name in name" style="color:#fff">{{name}}</span>
+                    <span class="assign-payTitle" >{{info}}</span><span v-for="name in name" class="assign-payInfor" >{{name}}</span>
                 </p>
-                <p type="submit" @click="submit()"><span>确认支付</span></p>
+                <p class="submit" type="submit" @click="submit()"><span>确认支付</span></p>
             </div>
     </div>
 </template>
@@ -139,7 +139,7 @@ li {
   height: 2rem;
   line-height: 2rem;
   display: inline-block;
-  /* background:url("../img/assign/assign_04.png") center no-repeat !important; */
+  background:url("../img/assign/assign_04.png") center no-repeat !important;
   background-size: 100% 100%;
   border: none;
   outline: none;
@@ -148,6 +148,7 @@ li {
   color: white;
   font-weight: bold;
   background: #660db6;
+  border-radius:0 0 10px 10px;
 }
 .assign-tp{
     padding-top:0.2rem;
@@ -167,6 +168,14 @@ li {
     width:25%;
     display: inline-block;
     border-right:0px;
+}
+
+
+.assign-payTitle{
+  display:inline-block;margin-right:1.5rem;margin-left:1.5rem;width:3rem;text-align:left;
+}
+.assign-payInfor{
+  color:#fff
 }
 </style>
 

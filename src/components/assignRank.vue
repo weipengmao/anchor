@@ -1,17 +1,17 @@
 <template>
-    <div id="assign">
-        <div class="assign-tp">
+    <div id="assignRank">
+        <div class="assignRank-tp">
             <div @click="tosign"><span>报名</span></div>
             <div @click="toBack"><span>回放</span></div>
             <div @click="toGetsign"><span>投票</span></div>
-            <div @click="toScore"><span  class="active">成绩</span></div>
+            <div @click="toScore"><span  class="assignRank-active">成绩</span></div>
         </div>
-        <p class="detail-title">成绩公布</p>
-        <div class="detail-box-score">
-          <p style="width:80%;border-bottom:1px solid #ccc;margin:0 auto;" v-for="item in num">
-            <span style="display:inline-block;padding:0.6rem;width:100%;height:100%;font-size:0.7rem;font-weight:bold;">
-            <span style="display:inline-block;height:100%;text-align:left;">爱笑的猫咪</span>
-            <span style="display:inline-block;height:100%;text-align:right;padding-left:3.3rem;font-size:0.5rem;">2163票</span>
+        <p class="assignRank-title">成绩公布</p>
+        <div class="assignRank-box-score">
+          <p class="assignRank-name"  v-for="item in num">
+            <span class="assignRank-inbox" >
+              <span class="inspan1" >爱笑的猫咪</span>
+              <span class="inspan2" >2163票</span>
             </span>
           </p>
         </div>
@@ -19,7 +19,7 @@
 </template>
 <script>
 export default {
-  name: "assign",
+  name: "assignRank",
   data() {
     return {
       num:[1,2,3,4,5,6,7,8,9,10]
@@ -77,15 +77,15 @@ export default {
     function subtj() {
       console.log(file.files);
     }
-    var doc = $(".assign-tp div span");
+    var doc = $(".assignRank-tp div span");
     for (let i = 0; i < doc.length; i++) {
       $(doc[i]).click(() => {
         for (var j = 0; j < doc.length; j++) {
-          if ($(doc[j]).hasClass("active")) {
-            $(doc[j]).removeClass("active");
+          if ($(doc[j]).hasClass("assign-active")) {
+            $(doc[j]).removeClass("assignRank-active");
           }
         }
-        $(doc[i]).addClass("active");
+        $(doc[i]).addClass("assignRank-active");
       });
     }
   },
@@ -103,7 +103,7 @@ export default {
       this.$router.push("/assignTou");
     },
     toScore(){
-      this.$router.push("/assignScore"); 
+      this.$router.push("/assignRank"); 
     },
     toDetail(){
       this.$router.push("/detail"); 
@@ -131,7 +131,7 @@ li {
   display: block;
 }
 
-#assign {
+#assignRank {
   width: 100%;
   height: 100vh;
   background: url("../img/assign/assign-bg.png") center no-repeat;
@@ -340,12 +340,12 @@ p[type="submit"] span {
   display: inline-block;
   margin-top: 0.25rem;
 }
-.assign-tp {
+.assignRank-tp {
   padding-top: 0.2rem;
   margin-bottom: 0.4rem;
   width: 100%;
 }
-.assign-tp div {
+.assignRank-tp div {
   font-size: 0.8rem;
   width: 23%;
   font-weight: bold;
@@ -354,12 +354,12 @@ p[type="submit"] span {
   margin-top: 0.2rem;
   border-right: 1px solid white;
 }
-.assign-tp div:last-child {
+.assignRank-tp div:last-child {
   width: 25%;
   display: inline-block;
   border-right: 0px;
 }
-.active {
+.assign-active {
   display: inline-block;
   padding-bottom: 0.1rem;
   border-bottom: 1px solid rgb(81, 0, 151);
@@ -389,7 +389,7 @@ a {
   width: 100%;
 }
 
-.detail-title {
+.assignRank-title {
   width: 100%;
   height: 2rem;
   line-height: 2rem;
@@ -397,18 +397,33 @@ a {
   font-size: 1.1rem;
   font-family: "微软雅黑";
 }
-.detail-box-score img {
+.assignRank-box-score img {
   width: 7rem;
   margin: 0.4rem 0;
   margin-left: 0.7rem;
   float: left;
 }
-.detail-box-score{
+.assignRank-box-score{
   border:1px solid rgb(81, 0, 151);
   background: #fff;
   border-radius:5%;
   width:90%;
   margin:0 auto;
+}
+
+.assignRank-name{
+  width:80%;border-bottom:1px solid #ccc;margin:0 auto;
+}
+
+.assignRank-inbox{
+display:inline-block;padding:0.6rem;width:100%;height:100%;font-size:0.7rem;font-weight:bold;
+}
+
+.assignRank-inbox .inspan1{
+display:inline-block;height:100%;text-align:left;
+}
+.assignRank-inbox .inspan2{
+display:inline-block;height:100%;text-align:right;padding-left:3.3rem;font-size:0.5rem;
 }
 </style>
 
