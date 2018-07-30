@@ -391,7 +391,7 @@ display:inline-block;border-right:1px solid #fff;
 }
 
 .area{
-font-size:0.45rem;padding-top:0.2rem;font-weight:normal;
+font-size:0.25rem !important;padding-top:0.2rem;font-weight:normal;
 }
 .remainDay{
 font-size:0.45rem;padding-left:4rem;

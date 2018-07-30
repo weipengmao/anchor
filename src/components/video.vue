@@ -18,7 +18,7 @@
             <p>关注</p>
         </div>
       </div>
-      <div class="video-fouth">
+      <div class="video-fouth" id="video-first">
         <div class="video-fouth-top" >
           <span class="sp1" >声明：严禁传播违法行为</span>
         </div>
@@ -123,6 +123,9 @@ export default {
   color:#fff;
   width:100%;
   font-size:0.7rem;
+}
+#video-first{
+  display:block;
 }
 .video-three div{
   position: relative;

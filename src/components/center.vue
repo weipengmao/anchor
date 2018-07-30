@@ -33,7 +33,6 @@
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 export default {
-    name:' e',
     mounted(){
         var width = this.contents.length*6.2;
         $(".opt-bottom-div").css("width",width+"rem");

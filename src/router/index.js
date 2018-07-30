@@ -50,6 +50,8 @@ export default new Router({
       path: '/',
       name: 'register',
       component: register
+      //兄弟劳烦自立更生哈，类似下面操作换下路由，性能会好一些
+      // resolve => require.ensure([], () => resolve(require('@/components/detail')), 'detail')
     },
     {
       path: '/index',
@@ -184,7 +186,7 @@ export default new Router({
           component: optIndex,
           children:[
             {
-              path: '/center',
+              path: '/',
               name: 'center',
               component: center,
             }

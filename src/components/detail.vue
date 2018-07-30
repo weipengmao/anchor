@@ -6,7 +6,7 @@
     <p class="detail-title">相关视频</p>
     <div class="detail-box">
         <div v-for="item in num">
-            <img src="../img/detail/detail-img2.png" alt="" @click="tovideo">
+            <video src="" width="150" height="91" @click="tovideo"></video>
         </div>
     </div>
 </div>
@@ -62,11 +62,12 @@ a{
     font-size:1.1rem;
     font-family: '微软雅黑'
 }
-.detail-box img{
+.detail-box video{
     width:7rem;
     margin:0.4rem 0;
     margin-left:0.7rem;
     float:left;
-
+    background:url("../img/detail/detail-img2.png");
+    background-size:100% 100%; 
 }
 </style>

@@ -8,14 +8,14 @@
         </div>
         <p class="assignBack-title">精彩回放</p>
         <div class="assignBack-box">
-            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
-            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
-            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
-            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
-            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
-            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
-            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
-            <img src="../img/detail/detail-img2.png" alt="" @click="toDetail">
+            <video src="" width="150" height="91" @click="toDetail"></video>
+            <video src="" width="150" height="91" @click="toDetail"></video>
+            <video src="" width="150" height="91" @click="toDetail"></video>
+            <video src="" width="150" height="91" @click="toDetail"></video>
+            <video src="" width="150" height="91" @click="toDetail"></video>
+            <video src="" width="150" height="91" @click="toDetail"></video>
+            <video src="" width="150" height="91" @click="toDetail"></video>
+            <video src="" width="150" height="91" @click="toDetail"></video>
         </div>
     </div>
 </template>
@@ -130,7 +130,15 @@ li {
   clear: both;
   display: block;
 }
-
+.assignBack-box video{
+  background:url("../img/detail/detail-img2.png");
+  background-size:100% 100%; 
+}
+.assignBack-title{
+  margin-bottom:0.8rem;
+  font-weight:bold;
+  color:#FFF;
+}
 #assignBack {
   width: 100%;
   height: 100%;
